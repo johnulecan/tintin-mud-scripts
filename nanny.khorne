@@ -1,0 +1,12 @@
+#read nanny.khorne.secret
+#EVENT {PROGRAM START}{#ses {NannyMUD Caos}{130.236.254.159}{2000}}
+#event {SESSION CONNECTED}{user_pass;#spl}
+#PROMPT {[xp%0][%1]}{[xp%0][%1]}
+
+#nop ALIAS
+#alias adv 9w7s2w2s
+#alias advb 2n2e7n9e
+#ALIAS {kh}{9w7s2w3sd;heal;u3n2e7n9e}
+
+#read nanny.settings
+#read nanny.alias

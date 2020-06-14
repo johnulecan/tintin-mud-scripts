@@ -1,0 +1,203 @@
+#alias {1}{southeast}
+#alias {2}{southwest}
+#alias {3}{northeast}
+#alias {4}{northwest}
+#alias {enter ship}
+
+#alias {11}{buy 1}
+#alias {22}{buy 2}
+#alias {33}{buy 3}
+#alias {44}{buy 4}
+#alias {55}{buy 5}
+#alias {66}{buy 6}
+#alias {77}{buy 7}
+#alias {88}{buy 8}
+#alias {99}{buy 9}
+#alias {sp}{buy special;drink special;put glasses in $container}
+
+#alias {ab}{9s;2e;southeast;e;southeast;e;northeast;2e;northeast;6e;northeast;4e;northeast;e;northeast;northeast;n;northeast;northeast;4n;enter gate;4n;2e;northwest;enter;5d;n;2e;2s;southwest;northwest;northeast;southeast;2s}
+#alias {abb}{2n;northwest;southwest;southeast;northeast;2n2ws5u;out;southeast;2w4s;out;4s;southwest;southwest;s;southwest;southwest;w;southwest;4w;southwest;6w;southwest;2w;southwest;w;northwest;w;northwest;2w9n}
+#alias {aby}{ab;2e;southeast;3e}
+#alias {abyb}{3w;4;2w;abb}
+#alias {aes}{8s2wd3s5wn;northwest;5n}
+#alias {aesb}{5s;southeast;s5e3nu2e8n}
+#alias {angel}{5w3s;call eagle;2nwnwn2w;climb mountain;jump;2n}
+#alias {ar}{arrival}
+#alias {arch}{e8n;4;enter portal;wnwww;enter castle;3n}
+#alias {archb}{3s;out;3ese;enter portal;1;8sw}
+#alias {ass}{4e3n2dw2d3se}
+#alias {assb}{3n2ue2u3s4w}
+#alias {bank}{2esennswn2w}
+#alias {bat}{4w5n5wn2wn4w;4;2;2w6n2e}
+#alias {batb}{w6s2e;3;1;4e;s2es5e5s4e}
+#alias {bix}{9s2e;1;2e;3;4ese}
+#alias {bixb}{wn4w;2;2w;4;2w9n}
+#alias {bixt}{bix;wn3w;3;2e3n}
+#alias {bixtb}{3s2w;2;3ese;bixb}
+#alias {bk}{9s2e;1;e;1;e;3;2n;3w;wewsww;6w2n}
+#alias {bkb}{2s6e5e;2s;2;w;4;w;4;ww9n}
+#alias {bsp}{bix;sp;bixb}
+#alias {c}{exa %0;search %0;move %0;push %0}
+#alias {ca}{44;eat cake}
+#alias {cake}{4wne3se}
+#alias {cakeb}{w3nws4e}
+#alias {car}{3w5se;get brick;w5n3e}
+#alias {cat}{8w;7s;1;d;2}
+#alias {catb}{3;u;4;7n8e}
+#alias {cave}{2e5n2wuw;enter altar;pray}
+#alias {caveb}{pray;ded2e5s2w}
+#alias {chef}{5e5s5w4nu2n}
+#alias {chefb}{2sd4s5e5n5w}
+#alias {chess}{e5n;northwest;3es2enw;play chess}
+#alias {chessb}{stop playing;es2wn3w;southeast;5sw}
+#alias {cs}{call ship}
+#alias {dan}{2en3w;enter portal 2;2e}
+#alias {danb}{2w;enter portal;3es2w}
+#alias {df}{drink fire;pp bottles}
+#alias {dk1}{2e3n3e2n;mount dragon;fly to telgar}
+#alias {dk1b}{d2s3w3s2w}
+#alias {dk2}{de6s;climb down rope;out;2en;open trapdoor;ue;1}
+#alias {dk2b}{4;w;wash floor;open trapdoor;ds2w;out;nn;push wall;enw;mount dragon;fly to garden}
+#alias {do}{donate %0}
+#alias {dr}{drink water}
+#alias {drow}{7sw2nen4e}
+#alias {drowb}{4wsw2se7n}
+#alias {dung}{17ws;southwest;w2n;enter house;nw;pull hook;2d}
+#alias {dungb}{2ues;out;2se;northeast;n17e}
+#alias {dunst}{17ws;southwest;w2n;enter house;nw;pull hook;2d}
+#alias {dunstb}{2ues;out;2se;northeast;n17e}
+#alias {dwa}{2e15nw;climb mountain;4;w;4;move pile;d3n}
+#alias {dwab}{3su;1;e;1;climb down;e15s2w}
+#alias {dwarf}{2en4w;enter mirror;2w;enter mirror;es2wn}
+#alias {dwarfb}{2enw;enter mirror;2e;enter mirror;4es2w}
+#alias {elf}{2e15nw;climb mountain;e;northeast;n;northeast;jump gap;southeast;2s;southeast}
+#alias {elfb}{northwest;2n;northwest;jump gap;southwest;s;southwest;w;climb down;e15s2w}
+#alias {fae}{song;2e;climb mountain;fly;2n}
+#alias {faeb}{2s;fly back;climb down;2w;songb}
+#alias {fal}{24s3u;rf;3d24n}
+#alias {fer}{5e;enter ferry;us;enter restaurant}
+#alias {ferb}{out;nd;enter;5w}
+#alias {fin}{9s2e;southeast;e;southeast;e5n;enter painting;3e2n}
+#alias {fin2}{9s2e;southeast;e;southeast;e5n;enter tapestry;2n;search tree;3}
+#alias {fin2b}{2;2s;enter light;5sw;northwest;w;northwest;2w9n}
+#alias {finb}{2s3w;enter portal;5sw;northwest;w;northwest;2w9n}
+#alias {flail}{9w7s6ws3d2wnds;dive pool;2n5w}
+#alias {flailb}{5e2sunus2e3un6e7n9e}
+#alias {flesh}{16w5s2ed2s;southeast;2s}
+#alias {fleshb}{2n;northwest;2nu2w5n16e}
+#alias {fnnr}{12w4n;northwest;northwest;n2w}
+#alias {fnnrb}{2es;southeast;southeast;4s12e}
+#alias {gre}{4w2sw2s;2;2;2;2sesw}
+#alias {greb}{enw2n;3;3;3;2ne2n4e}
+#alias {grol}{15w9s4e7s4w}
+#alias {grolb}{4e7n4w9n15e}
+#alias {hans}{4wne3ne6nw2ne2ne;say help}
+#alias {hans2}{3n4w4swu}
+#alias {hans2b}{de4n4e3s;hansb}
+#alias {hansb}{out;w;2sw2se6sw3sws4e}
+#alias {he}{4;4;4;6n4w;gh;4e6s;1;1;1}
+#alias {hodd}{9e3n;free my mind;d9n}
+#alias {hoddb}{9s;enter platform;free my mind;3s9w}
+#alias {hrunt}{6w;enter tunnel;e4s2en;northwest}
+#alias {hruntb}{southeast;s2w4nw;out;6e}
+#alias {hunt}{e3n2ed3s4eu2es3e}
+#alias {huntb}{3wn2wd4w3nu2w3sw}
+#alias {hw}{3;3;3;6n4e;gh;4w6s;2;2;2}
+#alias {ia}{iana;s}
+#alias {iab}{out;w;ianab}
+#alias {iana}{5w3s;call eagle;2nwnwn2w;climb mountain;jump;2nd}
+#alias {ianab}{e;southeast;swim;2se;enter boat;9n}
+#alias {ker}{3w5nw;4;4;4;search bushes;3e}
+#alias {kerb}{3w;1;1;1;e5s3e}
+#alias {lb}{light brazier}
+#alias {lic}{4wse5u;enter mirror;2e;enter mirror;n}
+#alias {lic2}{9w10nw;climb mountain;s;climb mountain;s;climb mountain;1;3n;enter}
+#alias {lic2b}{3s;4;climb down;n;climb down;n;climb down;e10s9e}
+#alias {licb}{s;enter mirror;2w;enter mirror;5dwn4e}
+#alias {maimer}{sun;3e;pay;ne2se3nwu3w3s}
+#alias {maimerb}{3n3ede3sw2nws4w;sunb}
+#alias {nunc}{move throne;2nwen3w2sw}
+#alias {ogre}{15w3ne4nwd}
+#alias {ogreb}{ue4sw3s15e}
+#alias {ogrep}{6w7s3eu3nws}
+#alias {ogrepb}{e3sd3w7n6e}
+#alias {orb}{grol;n;knock on gate;n2e3ne;buy 5;secure orb;w3s2w2s;grolb}
+#alias {pearl}{4w2n;southwest;wdend}
+#alias {pearlb}{get pearl;wswnw3suusue;northeast;2s4e}
+#alias {py}{4w6n;climb up;un;3;3;n;3;n;3;n}
+#alias {pyb}{s;2;s;2;s;d;2;s;2d6s4e}
+#alias {pyr}{4w6n;climb up;u;n;3;3;n;3;n;3;nnen;3;e}
+#alias {pyrb}{w;2;sw2s;2;s;2;sd;2;s;2d6s4e}
+#alias {pyre}{4w6n;climb up;un;3;3;n;3;n;3;n}
+#alias {riv}{9w4n}
+#alias {rivb}{4s9e}
+#alias {ruby}{16w;10s;e;3;3u;enter frame;10n;enter hole}
+#alias {rubyb}{u;10s;enter field;3d;2;w;10n;16e}
+#alias {sad}{6w7sw}
+#alias {sadb}{e7n6e}
+#alias {scc}{sail caerleon}
+#alias {sec}{sail east coast}
+#alias {sfang}{25w2n;3;2e;3;1;4enen;climb hill;touch diamond}
+#alias {sfangb}{drink dew}
+#alias {shd}{sail Isle of Hope and Despair}
+#alias {si}{sail island}
+#alias {sim}{27w;enter gate;6w;enter gate}
+#alias {simb}{out;6e;enter gate;27e}
+#alias {sm}{sail main land}
+#alias {sme}{sail middle-earth}
+#alias {smo}{sail morc}
+#alias {smurf}{fnnr;2nd2n;3}
+#alias {smurfb}{2;2su2s;fnnrb}
+#alias {song}{24ws;join song;n}
+#alias {songb}{s;be silent;n24e}
+#alias {spa}{sense personal aura}
+#alias {sph}{sail port hope}
+#alias {spi %1}{#variable tsp %1}
+#alias {spider}{4ws4e;enter mirror;wd2w2su}
+#alias {spiderb}{2n2eue;enter mirror;4wn4e}
+#alias {sr}{24s3e2nw}
+#alias {srb}{e2s3w24n}
+#alias {ssc}{sail south coast}
+#alias {ssen}{e10n;3;nwn}
+#alias {ssenb}{ses;2;10sw}
+#alias {strong}{4w2n;2;wu}
+#alias {strongb}{de;3;2s4e}
+#alias {sun}{4wne2s7e3nw}
+#alias {sunb}{e3s7w2nws4e}
+#alias {tk1}{3se3s;say Please let me in.}
+#alias {tk2}{e2sw4s5e6ns}
+#alias {tkb}{6s5w4ne2nw4nw3n}
+#alias {tree}{5eu;sit}
+#alias {treeb}{2d5w}
+#alias {trit}{9s2e;1;e;1;4s2d;enter}
+#alias {tritb}{exit;2u4n;4;w;4;2w9n}
+#alias {tro}{4w10nw3n;open door;2w}
+#alias {trob}{e;open door;e3se10s4e}
+#alias {truth}{9w7s6ws3d2e}
+#alias {truthb}{2w3un6e7n9e}
+#alias {under}{grol;3w3n4w;enter hollow;search dust;move rock}
+#alias {underb}{out;4e3s3e;grolb}
+#alias {val}{4e2s2w;climb ladder;u;enter ear}
+#alias {valb}{out;2d2e2n4w}
+#alias {wero}{25w2n;3;2e;3;ne;3;e;1;2;s;1;3;3;3;3;1;3;n;3;3;1;5s;1;es}
+#alias {werob}{nw;4;5n;4;2;2;s;2;4;2;2;2;2;4;n;3;4;w;2;ws;2;2w;2;2;2s25e}
+#alias {wolf}{15w5s3wsw;4;4n;cross bridge}
+#alias {wolfb}{4s;1;en3e5n15e}
+#alias {xer}{9w14nwn}
+#alias {xerb}{se14s9e}
+
+#alias {alv}{5es;enter ship;give $container to alvis;#delay {3}{out;n5w}}
+#alias {container}{#variable container %0}
+#alias {ep}{exa $container}
+#alias {gc}{get coins from $container}
+#alias {gp}{get %0 from $container}
+#alias {jar}{container jar}
+#alias {pack}{container pack}
+#alias {pp}{put %0 in $container}
+#alias {pu}{put all from ground in $container}
+#alias {pune}{put all from corpses in $container}
+#alias {sack}{container sack}
+#alias {sel}{sell all from $container}
+#alias {vp}{value all from $container}
+#alias {sho}{3en;sel;s3w}
+#alias {psp}{pss $coins}

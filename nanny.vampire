@@ -1,0 +1,108 @@
+#var feed_directions[1] 7n;
+#var feed_directions[2] e;
+#var feed_directions[3] s;
+#var feed_directions[4] e;
+#var feed_directions[5] 2w;
+#var feed_directions[6] w;
+#var feed_directions[7] s;
+#var feed_directions[8] w;
+#var feed_directions[9] 2e;
+#var feed_directions[10] e;
+#var feed_directions[11] e;
+#var feed_directions[12] e;
+#var feed_directions[13] s;
+#var feed_directions[14] w;
+#var feed_directions[15] w;
+#var feed_directions[16] w;
+#var feed_directions[17] w;
+#var feed_directions[18] w;
+#var feed_directions[19] es;
+#var feed_directions[20] e;
+#var feed_directions[21] e;
+#var feed_directions[22] e;
+#var feed_directions[23] ws;
+#var feed_directions[24] w;
+#var feed_directions[25] 2s;
+
+#var perbp 0;
+#var pre {OOO <110>blood<088> OOO};
+
+#alias feed {
+	#var feed 1;
+	#var park_position 1;
+	#var feed_again 0;
+	do_feed;
+}
+
+#alias do_feed {
+	#if {$feed_again == 0}{
+		$feed_directions[$park_position];
+	};
+	#else {
+		#var feed_again 0;
+	};
+
+	#if {$perbp < 80}{
+		#if {$park_position < 25}{
+			#send feed on slave;
+		};
+	};
+	#else {
+		feed_moveme;
+	}
+}
+
+#alias feed_moveme {
+	#math {park_position}{$park_position + 1};
+	#if {$park_position < 26}{
+		do_feed;
+	};
+	#else {
+		#showme $pre feed ended with $perbp% blood points.;
+		#var feed 0;
+	}
+}
+
+#action {What?}{
+	#if {$feed == 1}{
+		feed_moveme;
+	}
+}
+
+#action {You feel a sense of loss as the moment passes and there is no more blood to}{
+	#if {$feed == 1}{
+		#var feed_again 1;
+		do_feed;
+	}
+}
+
+#action {You lap up the last precious drops of blood.}{
+	#if {$feed == 1}{
+		#var feed_again 1;
+		do_feed;
+	}
+}
+
+#action {** BP: %1/%2}{
+	#var cbp %1;
+	#var maxbp %2;
+	#math {perbp}{$cbp * 100 / $maxbp};
+}
+
+
+#read nanny.vampire.secret
+#EVENT {PROGRAM START}{#ses {NannyMUD Vampire}{130.236.254.159}{2000}}
+#event {SESSION CONNECTED}{user_pass;#spl;#delay {2}{ec;score}}
+
+#PROMPT {[xp%0]}{[xp%0]}
+
+#nop ALIAS
+#ALIAS {vamp}{9w2n5wn;4;enter;2e}
+#ALIAS {vampb}{2w;out;1;s5e2s9e}
+
+#read nanny.settings
+#read nanny.alias
+
+#gag Shell doing: rr
+#gag Com: r
+#gag Shell doing: com r

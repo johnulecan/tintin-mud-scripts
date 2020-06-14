@@ -1,0 +1,370 @@
+#alias load1
+{
+    #alias gokill {#alias grin #nop;4w3se3ne6nw2ne2ne;say help;#delay {3}{3nd2s2nu4e3n;#unalias grin;grin}};
+    #alias goback {3s4w3s;out;w2sw2se6sw3sw3n4e};
+    #var goin {n};
+    #var goout {s};
+    #var target guard;
+}
+
+#alias load2
+{
+    #alias gokill {#alias grin #nop;4w3se3ne6nw2ne2ne;say help;#delay {3}{3n4e4s;#unalias grin;grin}};
+    #alias goback {4n4w3s;out;w2sw2se6sw3sw3n4e};
+    #var goin {w};
+    #var goout {e};
+    #var target guard;
+}
+
+#alias load3
+{
+    #alias gokill {#alias grin #nop;4w3se3ne6nw2ne2ne;say help;#delay {3}{3n4w3n;#unalias grin;grin}};
+    #alias goback {3s4e3s;out;w2sw2se6sw3sw3n4e};
+    #var goin {n};
+    #var goout {s};
+    #var target guard;
+}
+
+#alias load4
+{
+    #alias gokill {#alias grin #nop;4w3se3ne6nw2ne2ne;say help;#delay {3}{3n4w3s;#unalias grin;grin}};
+    #alias goback {3n4e3s;out;w2sw2se6sw3sw3n4e};
+    #var goin {s};
+    #var goout {n};
+    #var target guard;
+}
+
+#alias load5
+{
+    #alias gokill {#alias grin #nop;4w3se3ne6nw2ne2ne;say help;#delay {3}{3nds;#unalias grin;grin}};
+    #alias goback {nu3s;out;w2sw2se6sw3sw3n4e};
+    #var goin {s};
+    #var goout {n};
+    #var target guard;
+}
+
+#alias load6
+{
+    #alias gokill {#alias grin #nop;4w3se3ne6nw2ne2ne;say help;#delay {3}{3nd2n;#unalias grin;grin}};
+    #alias goback {2su3s;out;w2sw2se6sw3sw3n4e};
+    #var goin {open door;n};
+    #var goout {open door;s};
+    #var target marine;
+}
+
+#alias load7
+{
+    #alias gokill {e7s2w9sw};
+    #alias goback {e9n2e7nw};
+    #var goin {w};
+    #var goout {e};
+    #var target corporal;
+}
+
+#alias load8
+{
+    #alias gokill {e7s2w9sw};
+    #alias goback {e9n2e7nw};
+    #var goin {w};
+    #var goout {e};
+    #var target captain;
+}
+
+#alias load9
+{
+    #alias gokill {e7s2w9sw};
+    #alias goback {e9n2e7nw};
+    #var goin {w};
+    #var goout {e};
+    #var target major;
+}
+
+#alias load10
+{
+    #alias gokill {e7s2w9sws};
+    #alias goback {ne9n2e7nw};
+    #var goin {s};
+    #var goout {n};
+    #var target corporal;
+}
+
+#alias load11
+{
+    #alias gokill {4w4sw3s;call eagle;2nwnwn2w;climb mountain;jump;2n};
+    #alias goback {de;southeast;swim;2se;enter boat;2w;northwest;7nu3w4n4e};
+    #var goin {e};
+    #var goout {w};
+    #var target angel;
+}
+
+#alias load12
+{
+    #alias gokill {4w4sw3s;call eagle;2nwnwn2w;climb mountain;jump;2n};
+    #alias goback {de;southeast;swim;2se;enter boat;2w;northwest;7nu3w4n4e};
+    #var goin {w};
+    #var goout {e};
+    #var target angel;
+}
+
+#alias load13
+{
+    #alias gokill {4w4sw3s;call eagle;2nwnwn2w;climb mountain;jump;2n};
+    #alias goback {de;southeast;swim;2se;enter boat;2w;northwest;7nu3w4n4e};
+    #var goin {n};
+    #var goout {s};
+    #var target angel;
+}
+
+#alias load14
+{
+    #alias gokill {4w4s2e7n};
+    #alias goback {7s2w4n4e};
+    #var goin {n};
+    #var goout {s};
+    #var target guard;
+}
+
+#alias load15
+{
+    #alias gokill {4w4s2es};
+    #alias goback {n2w4n4e};
+    #var goin {s};
+    #var goout {n};
+    #var target guard;
+}
+
+#alias load16
+{
+    #alias gokill {en;northwest;3es2enw;play chess;2e};
+    #alias goback {2w;stop playing;es2wn3w;southeast;sw};
+    #var goin {e};
+    #var goout {w};
+    #var target knight;
+}
+
+#alias load17
+{
+    #alias gokill {en;northwest;3es2enw;play chess;2e};
+    #alias goback {2w;stop playing;es2wn3w;southeast;sw};
+    #var goin {e};
+    #var goout {w};
+    #var target bishop;
+}
+
+#alias load18
+{
+    #alias gokill {en;northwest;3es2enw;play chess;2w};
+    #alias goback {2e;stop playing;es2wn3w;southeast;sw};
+    #var goin {w};
+    #var goout {e};
+    #var target knight;
+}
+
+#alias load19
+{
+    #alias gokill {en;northwest;3es2enw;play chess;2w};
+    #alias goback {2e;stop playing;es2wn3w;southeast;sw};
+    #var goin {w};
+    #var goout {e};
+    #var target bishop;
+}
+
+#alias load20
+{
+    #alias gokill {e7sw2s3en;enter portal;es};
+    #alias goback {nw;enter portal;s3w2ne7nw};
+    #var goin {w};
+    #var goout {e};
+    #var target squid;
+}
+
+#alias load21
+{
+    #alias gokill {e7sw2s3en;enter portal;es};
+    #alias goback {nw;enter portal;s3w2ne7nw};
+    #var goin {e};
+    #var goout {w};
+    #var target squid;
+}
+
+#alias load22
+{
+    #alias gokill {e7sw2s3en;enter portal;e2s};
+    #alias goback {2nw;enter portal;s3w2ne7nw};
+    #var goin {w};
+    #var goout {e};
+    #var target squid;
+}
+
+#alias load23
+{
+    #alias gokill {e7sw2s3en;enter portal;e3sws2e};
+    #alias goback {2wne3nw;enter portal;s3w2ne7nw};
+    #var goin {n};
+    #var goout {s};
+    #var target squid;
+}
+
+#alias load24
+{
+    #alias gokill {e7sw2s3en;enter portal;e3sws2ene};
+    #alias goback {ws2wne3nw;enter portal;s3w2ne7nw};
+    #var goin {s};
+    #var goout {n};
+    #var target squid;
+}
+
+#alias load25
+{
+    #alias gokill {e7sw2s3en;enter portal;2ese};
+    #alias goback {wn2w;enter portal;s3w2ne7nw};
+    #var goin {n};
+    #var goout {s};
+    #var target squid;
+}
+
+#alias load26
+{
+    #alias gokill {e7sw2s3en;enter portal;2ene};
+    #alias goback {ws2w;enter portal;s3w2ne7nw};
+    #var goin {n};
+    #var goout {s};
+    #var target squid;
+}
+
+#alias load27
+{
+    #alias gokill {e4s3e2s2w;climb ladder;u;enter ear;2n};
+    #alias goback {2s;out;2d2e2n3w4nw};
+    #var goin {n};
+    #var goout {s};
+    #var target guard;
+}
+
+#alias load28
+{
+    #alias gokill {e4s3e2s2w;climb ladder;u;enter ear;4n};
+    #alias goback {4s;out;2d2e2n3w4nw};
+    #var goin {n};
+    #var goout {s};
+    #var target guard;
+}
+
+#alias load29
+{
+    #alias gokill {e4s3e2s2w;climb ladder;u;enter ear;5nw;southwest;w};
+    #alias goback {e;northeast;e5s;out;2d2e2n3w4nw};
+    #var goin {w};
+    #var goout {e};
+    #var target guard;
+}
+
+#alias load30
+{
+    #alias gokill {e4s3e2s2w;climb ladder;u;enter ear;5nw;northwest;w};
+    #alias goback {e;southeast;e5s;out;2d2e2n3w4nw};
+    #var goin {w};
+    #var goout {e};
+    #var target guard;
+}
+
+#alias load31
+{
+    #alias gokill {e4sen3w;enter portal 1645;n;#10 search crack;w};
+    #alias goback {ese;#3 climb down;e;enter portal;3esw4nw};
+    #var goin {w};
+    #var goout {e};
+    #var target magician;
+}
+
+#alias load32
+{
+    #alias gokill {4w4s11w9s4e7s4w3w3n4w;enter hollow;search dust;move rock;2d};
+    #alias goback {2u;out;4e3s3e4e7n4w9n11e4n4e};
+    #var goin {d};
+    #var goout {u};
+    #var target guard;
+}
+
+
+#alias load33
+{
+    #alias gokill {4w4s11w9s4e7s4w3w3n4w;enter hollow;search dust;move rock;3d};
+    #alias goback {3u;out;4e3s3e4e7n4w9n11e4n4e};
+    #var goin {s};
+    #var goout {n};
+    #var target guard;
+}
+
+#alias load34
+{
+    #alias gokill {4w4s8w4n;northwest;northwest;n2w2nd2n};
+    #alias goback {2su2s2es;southeast;southeast;4s8e4n4e};
+    #var goin {e};
+    #var goout {w};
+    #var target giant smurf;
+}
+
+#alias load34
+{
+    #alias gokill {e4s8e3n;free my mind;d8n};
+    #alias goback {8s;enter platform;free my mind;3s8w4nw};
+    #var goin {open gate;n};
+    #var goout {open gate;s};
+    #var target guard;
+}
+
+#alias load35
+{
+    #alias gokill {e4s8e3n;free my mind;d9n2w};
+    #alias goback {2e9s;enter platform;free my mind;3s8w4nw};
+    #var goin {w};
+    #var goout {e};
+    #var target guard;
+}
+
+#alias load36
+{
+    #alias gokill {e4s8e3n;free my mind;d9n2e};
+    #alias goback {2w9s;enter platform;free my mind;3s8w4nw};
+    #var goin {e};
+    #var goout {w};
+    #var target guard;
+}
+
+#alias load37
+{
+    #alias gokill {e4s8e3n;free my mind;d9n3e2n};
+    #alias goback {2s3w9s;enter platform;free my mind;3s8w4nw};
+    #var goin {n};
+    #var goout {s};
+    #var target guard;
+}
+
+#alias load38
+{
+    #alias gokill {e4s8e3n;free my mind;d9n3w2n};
+    #alias goback {2s3e9s;enter platform;free my mind;3s8w4nw};
+    #var goin {n};
+    #var goout {s};
+    #var target guard;
+}
+
+#alias load39
+{
+    #alias gokill {e4s8e3n;free my mind;d9n3w3n2w};
+    #alias goback {2e3s3e9s;enter platform;free my mind;3s8w4nw};
+    #var goin {w};
+    #var goout {e};
+    #var target guard;
+}
+
+#alias pickkill
+{
+    #math {killnr}{$killnr + 1};
+    #if {$killnr > 39}{#var killnr 1};
+    load$killnr;
+    #var iskilling 1;
+    #var didcorpse 0;
+}
+
