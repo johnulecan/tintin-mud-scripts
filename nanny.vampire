@@ -90,10 +90,6 @@
 }
 
 
-#read nanny.vampire.secret
-#EVENT {PROGRAM START}{#ses {NannyMUD Vampire}{130.236.254.159}{2000}}
-#event {SESSION CONNECTED}{user_pass;#spl;#delay {2}{ec;score}}
-
 #PROMPT {[xp%0]}{[xp%0]}
 
 #nop ALIAS
@@ -106,3 +102,7 @@
 #gag Shell doing: rr
 #gag Com: r
 #gag Shell doing: com r
+
+#read nanny.vampire.secret
+#EVENT {PROGRAM START}{#ses {NannyMUD Vampire}{130.236.254.159}{2000}}
+#event {SESSION CONNECTED}{user_pass;#spl;#delay {2}{ec;score}}
