@@ -316,8 +316,8 @@
 
 #alias load35
 {
-    #alias gokill {e4s8e3n;free my mind;d9n2w};
-    #alias goback {2e9s;enter platform;free my mind;3s8w4nw};
+    #alias gokill {e4s8e3n;free my mind;d8n;open gate;n2w};
+    #alias goback {2e;open gate;9s;enter platform;free my mind;3s8w4nw};
     #var goin {w};
     #var goout {e};
     #var target guard;
@@ -325,8 +325,8 @@
 
 #alias load36
 {
-    #alias gokill {e4s8e3n;free my mind;d9n2e};
-    #alias goback {2w9s;enter platform;free my mind;3s8w4nw};
+    #alias gokill {e4s8e3n;free my mind;d8n;open gate;n2e};
+    #alias goback {2w;open gate;9s;enter platform;free my mind;3s8w4nw};
     #var goin {e};
     #var goout {w};
     #var target guard;
@@ -334,8 +334,8 @@
 
 #alias load37
 {
-    #alias gokill {e4s8e3n;free my mind;d9n3e2n};
-    #alias goback {2s3w9s;enter platform;free my mind;3s8w4nw};
+    #alias gokill {e4s8e3n;free my mind;d8n;open gate;n3e2n};
+    #alias goback {2s3w;open gate;9s;enter platform;free my mind;3s8w4nw};
     #var goin {n};
     #var goout {s};
     #var target guard;
@@ -343,8 +343,8 @@
 
 #alias load38
 {
-    #alias gokill {e4s8e3n;free my mind;d9n3w2n};
-    #alias goback {2s3e9s;enter platform;free my mind;3s8w4nw};
+    #alias gokill {e4s8e3n;free my mind;d8n;open gate;n3w2n};
+    #alias goback {2s3e;open gate;9s;enter platform;free my mind;3s8w4nw};
     #var goin {n};
     #var goout {s};
     #var target guard;
@@ -352,10 +352,10 @@
 
 #alias load39
 {
-    #alias gokill {e4s8e3n;free my mind;d9n3w3n2w};
-    #alias goback {2e3s3e9s;enter platform;free my mind;3s8w4nw};
-    #var goin {w};
-    #var goout {e};
+    #alias gokill {e4s8e3n;free my mind;d8n;open gate;n3w3n2e};
+    #alias goback {2w3s3e;open gate;9s;enter platform;free my mind;3s8w4nw};
+    #var goin {e};
+    #var goout {w};
     #var target guard;
 }
 

@@ -7,13 +7,9 @@
 
 #action {The high wizards are Beldin, Titleist, Vulcan, Astrodeath, Carrion and Auric.}{#cr}
 
-#nop #alias stash {3sess3en;enter portal;ennws}
-#nop #alias stashb {nessw;enter portal;s3w2nw3n}
-#alias stash {4ws7e;open door;e;}
-#alias stashb {w;close door;7wn4e}
-
 #conf {SPEEDWALK}{on}
 #conf {PACKET PATCH}{9.99}
+#conf color on
 
 #var prep {[<034>N<025>B<016>o<007>t<043>v<052>2<061>.<043>0<088>] }
 
@@ -95,7 +91,7 @@
 
     #math {fr}{1d100};
     #if {$fr == 1}{l};
-    #if {$fr == 2}{party};
+    #if {($fr < 10) && ($church == 1)}{party};
     #nop #showme $prep [HB][C:$church][%:$php|$psp][HBD:$hbdelay][k:$iskilling][knr:$killnr($target)][S:$special][$fr];
 
     #var didsomething 0;
@@ -123,12 +119,12 @@
     #if {($church == 1) && ($shdiff > 15) && ($didsomething == 0)}
     {
         #math {mp}{$mp + 1};
-        #if {$mp > 4}{#var mp 1};
+        #if {$mp > 8}{#var mp 1};
         #showme $prep need to do something: $mp;
         #if {$mp == 1}{detect magic on star};
-        #if {$mp == 2}{feel};
-        #if {$mp == 3}{cast light};
-        #if {$mp == 4}{earthwave};
+        #if {$mp == 3}{feel};
+        #if {$mp == 5}{cast light};
+        #if {$mp == 7}{earthwave};
         #var didsomething 1;
     };
     
