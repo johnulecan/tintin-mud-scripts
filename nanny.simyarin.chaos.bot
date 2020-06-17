@@ -40,7 +40,7 @@
 }
 
 #var church 0
-#alias setchurch {#var church 1;#nop #showme $prep Old Wood...;}
+#alias setchurch {#var church 1;#nop #showme $prep Old Wood...}
 #alias unsetchurch {#var church 0}
 
 #action {The Old Wood <e w n s>.}{setchurch}
@@ -205,23 +205,36 @@
     };
 }
 
-#action {You can sense the divine presence of mighty TURGILDI at this place, and fall to}{
+#action {You can sense the divine presence of mighty TURGILDI at this place, and fall to}{do_t_room}
+#action {You can sense the faintest residue of mighty TURGILDI around}{do_t_room}
+#action {TURGILDI has been here, and you think there still might be}{do_t_room}
+#action {You are able to sense the presence of TURGILDI, maybe you}{do_t_room}
+#action {You are able to feel the presence of TURGILDI and its}{do_t_room}
+#alias do_t_room {
     tame;
     #var oktokill 1;
     #var ne 0;
 }
 
-#action {You feel the hopelessness and wasteness of a place where none of the mighty god}{
+#action {You feel the hopelessness and wasteness of a place where none of the mighty god}{do_nog_room}
+#action {You can sense the eternal struggle between the gods here and their fighting}{do_nog_room}
+#action {The pattern of magic is particularily thin and}{do_nog_room}
+#action {The waves are milling at different directions from here as}{do_nog_room}
+#action {The waves are milling at different directions from here as}{do_nog_room}
+#action {You can sense the weave of the waves strongly here and}{do_nog_room}
+#action {You have found the brocade of the pattern, weave so heavy}{do_nog_room}
+c#alias do_nog_room {
     #var oktokill 1;
     #var ne 0;
 }
 
-#action {You can sense the eternal struggle between the gods here and their fighting}{
-    #var oktokill 1;
-    #var ne 0;
-}
 
-#action {You can sense the divine presence of mighty COTH at this place, and fall to your}{
+#action {You can sense the divine presence of mighty COTH at this place, and fall to your}{do_c_room}
+#action {You can sense the faintest residue of mighty COTH around here.}{do_c_room}
+#action {COTH has been here, and you think there still might be a chance}{do_c_room}
+#action {You are able to sense the presence of COTH, maybe you should}{do_c_room}
+#action {You are able to feel the hot breath of COTH in your neck,}{do_c_room}
+#alias do_c_room {
     #if {($ne == 1) && ($atkill == 1)}
     {
         #showme {$prep COTH!!!};

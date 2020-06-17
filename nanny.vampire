@@ -42,7 +42,7 @@
 		#var feed_again 0;
 	};
 
-	#if {$perbp < 80}{
+	#if {$perbp < 90}{
 		#if {$park_position < 25}{
 			#send feed on slave;
 		};

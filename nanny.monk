@@ -1,0 +1,16 @@
+#PROMPT {[xp%0][%1]}{[xp%0][%1]}
+
+#nop ALIAS
+#ALIAS {yard}{3s2w2ne}
+#ALIAS {yardb}{w2s2e3n}
+#ALIAS {cpic}{2n;pic;2s}
+#ALIAS {gpic}{yard;pic;yardb}
+#ALIAS {p2}{#2 pick herb}
+#ALIAS {pic}{2e;p2;e;p2;s;p2;s;p2;nw;p2;nww}
+
+#read nanny.settings
+#read nanny.alias
+
+#read nanny.monk.secret
+#EVENT {PROGRAM START}{#ses {NannyMUD Monk}{130.236.254.159}{2000}}
+#event {SESSION CONNECTED}{user_pass;#spl;2sw;withdraw all;en;yard;pic;s;read note;s;pray to lars}

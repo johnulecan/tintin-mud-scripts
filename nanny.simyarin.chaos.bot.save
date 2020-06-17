@@ -1,6 +1,6 @@
 #CLASS {nanny.simyarin.chaos.bot.save} OPEN
 
-#VARIABLE         {gains}  {{Giant-smurf}{{gc}{-140}{knr}{5}{xp}{29032}}{The angel}{{gc}{-6434}{knr}{30}{xp}{5237}}{The big angel}{{gc}{-5486}{knr}{32}{xp}{23627}}{The black bishop}{{gc}{-268}{knr}{20}{xp}{51341}}{The black knight}{{gc}{-7309}{knr}{21}{xp}{35366}}{The captain}{{gc}{-419}{knr}{10}{xp}{11285}}{The corporal}{{gc}{-1286}{knr}{40}{xp}{26775}}{The guard}{{gc}{167869}{knr}{177}{xp}{251382}}{The huge angel}{{gc}{2568}{knr}{19}{xp}{51021}}{The magician}{{gc}{-5455}{knr}{24}{xp}{139494}}{The major}{{gc}{70}{knr}{3}{xp}{2549}}{The squid}{{gc}{-187288}{knr}{169}{xp}{240283}}{The staphylococci}{{gc}{-738}{knr}{2}{xp}{971}}{The tower guard}{{gc}{69122}{knr}{146}{xp}{604088}}{The white bishop}{{gc}{-4414}{knr}{29}{xp}{73907}}{The white knight}{{gc}{-6532}{knr}{29}{xp}{49470}}}
-#VARIABLE         {totalsp}  {271080}
+#VARIABLE         {gains}  {{Giant-smurf}{{gc}{-140}{knr}{5}{xp}{29032}}{The angel}{{gc}{-8469}{knr}{39}{xp}{6185}}{The big angel}{{gc}{-7192}{knr}{41}{xp}{29331}}{The black bishop}{{gc}{1292}{knr}{28}{xp}{71844}}{The black knight}{{gc}{-12111}{knr}{29}{xp}{48746}}{The captain}{{gc}{-69}{knr}{12}{xp}{13695}}{The corporal}{{gc}{-1479}{knr}{49}{xp}{32614}}{The guard}{{gc}{256247}{knr}{264}{xp}{422305}}{The huge angel}{{gc}{2435}{knr}{23}{xp}{65784}}{The magician}{{gc}{-6612}{knr}{30}{xp}{174239}}{The major}{{gc}{-280}{knr}{5}{xp}{4178}}{The squid}{{gc}{-254210}{knr}{231}{xp}{-646421}}{The staphylococci}{{gc}{-758}{knr}{3}{xp}{1351}}{The tower guard}{{gc}{88333}{knr}{186}{xp}{772422}}{The white bishop}{{gc}{-4063}{knr}{35}{xp}{89358}}{The white knight}{{gc}{-9459}{knr}{35}{xp}{59734}}}
+#VARIABLE         {totalsp}  {332754}
 
 #CLASS {nanny.simyarin.chaos.bot.save} CLOSE
