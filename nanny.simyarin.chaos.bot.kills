@@ -279,25 +279,6 @@
 
 #alias load32
 {
-    #alias gokill {4w4s11w9s4e7s4w3w3n4w;enter hollow;search dust;move rock;2d};
-    #alias goback {2u;out;4e3s3e4e7n4w9n11e4n4e};
-    #var goin {d};
-    #var goout {u};
-    #var target guard;
-}
-
-
-#alias load33
-{
-    #alias gokill {4w4s11w9s4e7s4w3w3n4w;enter hollow;search dust;move rock;3d};
-    #alias goback {3u;out;4e3s3e4e7n4w9n11e4n4e};
-    #var goin {s};
-    #var goout {n};
-    #var target guard;
-}
-
-#alias load34
-{
     #alias gokill {4w4s8w4n;northwest;northwest;n2w2nd2n};
     #alias goback {2su2s2es;southeast;southeast;4s8e4n4e};
     #var goin {e};
@@ -305,7 +286,7 @@
     #var target giant smurf;
 }
 
-#alias load34
+#alias load33
 {
     #alias gokill {e4s8e3n;free my mind;d8n};
     #alias goback {8s;enter platform;free my mind;3s8w4nw};
@@ -314,7 +295,7 @@
     #var target guard;
 }
 
-#alias load35
+#alias load34
 {
     #alias gokill {e4s8e3n;free my mind;d8n;open gate;n2w};
     #alias goback {2e;open gate;9s;enter platform;free my mind;3s8w4nw};
@@ -323,7 +304,7 @@
     #var target guard;
 }
 
-#alias load36
+#alias load35
 {
     #alias gokill {e4s8e3n;free my mind;d8n;open gate;n2e};
     #alias goback {2w;open gate;9s;enter platform;free my mind;3s8w4nw};
@@ -332,7 +313,7 @@
     #var target guard;
 }
 
-#alias load37
+#alias load36
 {
     #alias gokill {e4s8e3n;free my mind;d8n;open gate;n3e2n};
     #alias goback {2s3w;open gate;9s;enter platform;free my mind;3s8w4nw};
@@ -341,7 +322,7 @@
     #var target guard;
 }
 
-#alias load38
+#alias load37
 {
     #alias gokill {e4s8e3n;free my mind;d8n;open gate;n3w2n};
     #alias goback {2s3e;open gate;9s;enter platform;free my mind;3s8w4nw};
@@ -350,7 +331,7 @@
     #var target guard;
 }
 
-#alias load39
+#alias load38
 {
     #alias gokill {e4s8e3n;free my mind;d8n;open gate;n3w3n2e};
     #alias goback {2w3s3e;open gate;9s;enter platform;free my mind;3s8w4nw};
@@ -359,10 +340,209 @@
     #var target guard;
 }
 
+#alias load39
+{
+    #alias gokill {4w4s11w9s4e7s4w4s;southwest;e};
+    #alias goback {w;northeast;4n4e7n4w9n11e4n4e};
+    #var goin touch tree;
+    #var goout out;
+    #var target dryad;
+}
+
+#alias load40
+{
+    #alias gokill {4w4s11w9s4e7s4w4s;southwest;southwest;se};
+    #alias goback {wn;northeast;northeast;4n4e7n4w9n11e4n4e};
+    #var goin enter tree;
+    #var goout out;
+    #var target dryad;
+}
+
+#alias load41
+{
+    #alias gokill {4w4s20ws;join song;n};
+    #alias goback {s;be silent;n20e4n4e};
+    #var goin {n};
+    #var goout {s};
+    #var target hunter;
+}
+
+#alias load42
+{
+    #alias gokill {e4sen3w;enter portal 2};
+    #alias goback {enter portal;3esw4nw};
+    #var goin n;
+    #var goout s;
+    #var target mercenary;
+}
+
+#alias load43
+{
+    #alias gokill {e4sen3w;enter portal 2};
+    #alias goback {enter portal;3esw4nw};
+    #var goin e;
+    #var goout w;
+    #var target mercenary;
+}
+
+#alias load44
+{
+    #alias gokill {e4sen3w;enter portal 2;2e};
+    #alias goback {2w;enter portal;3esw4nw};
+    #var goin s;
+    #var goout n;
+    #var target mercenary;
+}
+
+#alias load45
+{
+    #alias gokill {e4sen3w;enter portal 2;2e};
+    #alias goback {2w;enter portal;3esw4nw};
+    #var goin n;
+    #var goout s;
+    #var target mercenary;
+}
+
+#alias load46
+{
+    #alias gokill {e4sen3w;enter portal 2;w;enter cave;2n};
+    #alias goback {2s2e;enter portal;3esw4nw};
+    #var goin n;
+    #var goout s;
+    #var target mercenary;
+}
+
+#alias load47
+{
+    #alias gokill {e4sen3w;enter portal 2;2e2n};
+    #alias goback {2s2w;enter portal;3esw4nw};
+    #var goin climb gate;
+    #var goout d;
+    #var target mercenary;
+}
+
+#alias load48
+{
+    #alias gokill {en;northwest;3es2enw;play chess;2w};
+    #alias goback {2e;stop playing;es2wn3w;southeast;sw};
+    #var goin {w};
+    #var goout {e};
+    #var target knight;
+}
+
+#alias load49
+{
+    #var target bishop;
+}
+
+#alias load50
+{
+    #alias gokill {en;northwest;3es2enw;play chess;2e};
+    #alias goback {2w;stop playing;es2wn3w;southeast;sw};
+    #var goin {e};
+    #var goout {w};
+    #var target knight;
+}
+
+#alias load51
+{
+    #var target bishop;
+}
+
+#alias load52
+{
+    #alias gokill {en;northwest;3es2enw;play chess;3e};
+    #alias goback {3w;stop playing;es2wn3w;southeast;sw};
+    #var goin {e};
+    #var goout {w};
+    #var target rook;
+}
+
+#alias load53
+{
+    #alias gokill {en;northwest;3es2enw;play chess;3w};
+    #alias goback {3e;stop playing;es2wn3w;southeast;sw};
+    #var goin {w};
+    #var goout {e};
+    #var target rook;
+}
+
+#alias load54
+{
+    #alias gokill {4w4s13ws;southwest;w2n;enter house;nw;pull hook;2d};
+    #alias goback {;enter hole;u;w;out;northwest;n;3e;northeast;n13e4n4e};
+    #var goin e;
+    #var goout w;
+    #var target keeper;
+}
+
+#alias load55
+{
+    #alias gokill {4w4s13ws;southwest;w2n;enter house;nw;pull hook;2d3e};
+    #alias goback {3w;enter hole;u;w;out;northwest;n;3e;northeast;n13e4n4e};
+    #var goin e;
+    #var goout w;
+    #var target keeper;
+}
+
+#alias load56
+{
+    #alias gokill {4w4s13ws;southwest;w2n;enter house;nw;pull hook;2d6e};
+    #alias goback {6w;enter hole;u;w;out;northwest;n;3e;northeast;n13e4n4e};
+    #var goin e;
+    #var goout w;
+    #var target keeper;
+}
+
+#alias load57 
+{
+    #alias gokill {4w4s13ws;southwest;w2n;enter house;nw;pull hook;2de2s};
+    #alias goback {2nw;enter hole;u;w;out;northwest;n;3e;northeast;n13e4n4e};
+    #var goin s;
+    #var goout n;
+    #var target keeper;
+}
+
+#alias load58
+{
+    #alias gokill {4w4s13ws;southwest;w2n;enter house;nw;pull hook;2de5s};
+    #alias goback {5nw;enter hole;u;w;out;northwest;n;3e;northeast;n13e4n4e};
+    #var goin s;
+    #var goout n;
+    #var target keeper;
+}
+
+#alias load59
+{
+    #alias gokill {4w4s13ws;southwest;w2n;enter house;nw;pull hook;2de6s2e};
+    #alias goback {2w6nw;enter hole;u;w;out;northwest;n;3e;northeast;n13e4n4e};
+    #var goin e;
+    #var goout w;
+    #var target keeper;
+}
+
+#alias load60
+{
+    #alias gokill {4w4s13ws;southwest;w2n;enter house;nw;pull hook;2de6s5e};
+    #alias goback {5w6nw;enter hole;u;w;out;northwest;n;3e;northeast;n13e4n4e};
+    #var goin e;
+    #var goout w;
+    #var target keeper;
+}
+
+#alias load61
+{
+    #alias gokill {4w4s13ws;southwest;w2n;enter house;nw;pull hook;2de6s6e2n};
+    #alias goback {2s6w6nw;enter hole;u;w;out;northwest;n;3e;northeast;n13e4n4e};
+    #var goin n;
+    #var goout s;
+    #var target keeper;
+}
+
 #alias pickkill
 {
     #math {killnr}{$killnr + 1};
-    #if {$killnr > 39}{#var killnr 1};
+    #if {$killnr > 61}{#var killnr 1};
     load$killnr;
     #var iskilling 1;
     #var didcorpse 0;

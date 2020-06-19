@@ -1,5 +1,3 @@
-#PROMPT {[xp%0][%1]}{[xp%0][%1]}
-
 #nop ALIAS
 #ALIAS {yard}{3s2w2ne}
 #ALIAS {yardb}{w2s2e3n}
@@ -11,6 +9,52 @@
 #read nanny.settings
 #read nanny.alias
 
+#var didsomething {0};
+#action {** HP: %1/%2   SP: %3/%4}{
+    #math {php}{(%1*100)/%2};
+    #math {psp}{(%3*100)/%4};
+    #var hp %1;
+    #var sp %3;
+    #if {$didsomething == 0}{
+        #if {(%3*100)/%4 < 50}{
+            #var didsomething 1;
+            #delay {2}{#var didsomething 0};
+            #delay {2}{heal me mentally with herb;}
+        };
+        #else {
+            #if {(%1*100)/%2 < 90}{
+                #var didsomething 1;
+                #delay {2}{#var didsomething 0};
+                #delay {2}{h};
+            };
+        };
+    };
+}
+
+#high {[Monks]}{b white}
+#high {[Lars' Word]}{b white}
+
+#action {[Lars' Word] %0 will be in 1 minute in the monastery chapel.}{
+    #var mass %0;
+    #var mass_min {in 1 minute};
+    #cr;
+}
+
+#action {[Lars' Word] %0 will be in %1 minutes in the monastery chapel.}{
+    #var mass %0;
+    #var mass_min {in %1 minutes};
+    #cr;
+}
+
+#action {[Lars' Word] %0 starts now.}{
+    #var mass %0;
+    #var mass_min {just was};
+    #cr;
+}
+
+#PROMPT {[xp%0][%1]}{[xp%0][%1] [$mass $mass_min]}
+#action {You are blessed by Lars.}{pray to lars}
+
 #read nanny.monk.secret
 #EVENT {PROGRAM START}{#ses {NannyMUD Monk}{130.236.254.159}{2000}}
-#event {SESSION CONNECTED}{user_pass;#spl;2sw;withdraw all;en;yard;pic;s;read note;s;pray to lars}
+#event {SESSION CONNECTED}{user_pass;#spl;Mreview;2sw;withdraw all;en;yard;pic;s;read note;s;pray to lars}

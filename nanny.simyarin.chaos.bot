@@ -148,6 +148,7 @@
         {
             pickkill;
             #var ne 1;
+            #var chaosmarked 0;
         };
         wimpy $whp;gokill;grin evil;tar $target;
     };
@@ -169,6 +170,7 @@
     {
         #if {($sp > 20) && ($exhaust == 0) && ($didsomething == 0)}
         {
+           #if {$chaosmarked == 0}{chaosmark $target};
            f;
         };
 
@@ -178,6 +180,9 @@
         };
     };
 }
+
+#action {You have now claimed}{#var chaosmarked 1}
+#action {This monster is already targeted for destruction by Uruloki.}{#var chaosmarked 1}
 
 #gag {my_partee %0}{1}
 
@@ -220,10 +225,9 @@
 #action {You can sense the eternal struggle between the gods here and their fighting}{do_nog_room}
 #action {The pattern of magic is particularily thin and}{do_nog_room}
 #action {The waves are milling at different directions from here as}{do_nog_room}
-#action {The waves are milling at different directions from here as}{do_nog_room}
 #action {You can sense the weave of the waves strongly here and}{do_nog_room}
 #action {You have found the brocade of the pattern, weave so heavy}{do_nog_room}
-c#alias do_nog_room {
+#alias do_nog_room {
     #var oktokill 1;
     #var ne 0;
 }
@@ -330,7 +334,9 @@ c#alias do_nog_room {
 
 #var totalspnow 0;
 #action {You cast Light and start to illuminate the room.}{@addsp{10}}
+#action {You start to focus on 'Ostaryn Pallalar-Faeth'.}{@addsp{2}}
 #action {You start to focus on 'Evarelara Pallalar-Faeth'.}{@addsp{2}}
+#action {You start to focus on 'Ilasse Pallalar-Faeth'.}{@addsp{2}}
 #action {When you feel that you are surrounded by nothing but icy, cold air, you part}{@addsp{18}}
 #action {'A Chaos Star' is magical.}{@addsp{10}}
 
