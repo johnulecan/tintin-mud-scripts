@@ -55,6 +55,9 @@
 #PROMPT {[xp%0][%1]}{[xp%0][%1] [$mass $mass_min]}
 #action {You are blessed by Lars.}{pray to lars}
 
+#high {Your faith is strong.}{tan}
+
 #read nanny.monk.secret
 #EVENT {PROGRAM START}{#ses {NannyMUD Monk}{130.236.254.159}{2000}}
 #event {SESSION CONNECTED}{user_pass;#spl;Mreview;2sw;withdraw all;en;yard;pic;s;read note;s;pray to lars}
+#alias owood #read nanny.monk.old_wood

@@ -242,7 +242,7 @@
     #if {($ne == 1) && ($atkill == 1)}
     {
         #showme {$prep COTH!!!};
-        #delay {2}{
+        #delay {1}{
             #var ne 0;
             #var atkill 0;
             #var iskilling 0;

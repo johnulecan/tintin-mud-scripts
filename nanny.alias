@@ -185,6 +185,10 @@
 #alias {wolfb}{4s;1;en3e5n15e}
 #alias {xer}{9w14nwn}
 #alias {xerb}{se14s9e}
+#alias tribe {s;s;s;s;s;s;s;s;s;e;e;southeast;e;southeast;e;northeast;e;e;northeast;e;e;e;e;e;e;northeast;e;e;e;e;northeast;e;n;n;northwest;n;n;n;w;w;w;w;w}
+#alias tribeb {ee;e;e;e;s;s;s;southeast;s;s;w;southwest;w;w;w;w;southwest;w;w;w;w;w;w;southwest;w;w;southwest;w;northwest;w;northwest;w;w;n;n;n;n;n;n;n;n;n}
+
+
 
 #alias {alv}{5es;enter ship;give $container to alvis;#delay {3}{out;n5w}}
 #alias {container}{#variable container %0}
