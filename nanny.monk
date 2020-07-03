@@ -37,27 +37,41 @@
 #action {[Lars' Word] %0 will be in 1 minute in the monastery chapel.}{
     #var mass %0;
     #var mass_min {in 1 minute};
+    #var {real_mass_min}{1};
     #cr;
 }
 
 #action {[Lars' Word] %0 will be in %1 minutes in the monastery chapel.}{
     #var mass %0;
     #var mass_min {in %1 minutes};
+    #var {real_mass_min}{%1};
     #cr;
 }
 
 #action {[Lars' Word] %0 starts now.}{
     #var mass %0;
-    #var mass_min {just was};
+    #var mass_min {is now};
+    #var {real_mass_min}{0};
     #cr;
 }
 
 #PROMPT {[xp%0][%1]}{[xp%0][%1] [$mass $mass_min]}
 #action {You are blessed by Lars.}{pray to lars}
 
+#action {You now feel ready to go out into the world.}{
+    #var mass_min {just was};
+    #var {real_mass_min}{180};
+    #cr;
+}
+
 #high {Your faith is strong.}{tan}
+
+#action {The next mass is in about %0 minutes.}{
+    #var mass_min {in %0 minutes};
+    #var {real_mass_min}{%0};
+}
 
 #read nanny.monk.secret
 #EVENT {PROGRAM START}{#ses {NannyMUD Monk}{130.236.254.159}{2000}}
-#event {SESSION CONNECTED}{user_pass;#spl;Mreview;2sw;withdraw all;en;yard;pic;s;read note;s;pray to lars}
+#event {SESSION CONNECTED}{user_pass;#spl;2sw;Mreview;withdraw all;en;yard;pic;2s;pray to lars;n;read note;s}
 #alias owood #read nanny.monk.old_wood

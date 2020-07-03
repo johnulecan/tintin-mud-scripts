@@ -148,7 +148,9 @@
         {
             pickkill;
             #var ne 1;
-            #var chaosmarked 0;
+            #if {$chaosmark_on == 1}{
+                #var chaosmarked 0;
+            }
         };
         wimpy $whp;gokill;grin evil;tar $target;
     };
@@ -181,7 +183,13 @@
     };
 }
 
+#alias cmon #var chaosmark_on 1
+#alias cmoff #var chaosmark_on 0
+cmoff
+
+
 #action {You have now claimed}{#var chaosmarked 1}
+#action {You have marked another monster in another room. Hence you can not use the spell here.}{#var chaosmarked 1}
 #action {This monster is already targeted for destruction by Uruloki.}{#var chaosmarked 1}
 
 #gag {my_partee %0}{1}
@@ -337,6 +345,7 @@
 #action {You start to focus on 'Ostaryn Pallalar-Faeth'.}{@addsp{2}}
 #action {You start to focus on 'Evarelara Pallalar-Faeth'.}{@addsp{2}}
 #action {You start to focus on 'Ilasse Pallalar-Faeth'.}{@addsp{2}}
+#action {You start to focus on 'Ysara Pallalar-Faeth'.}{@addsp{5}}
 #action {When you feel that you are surrounded by nothing but icy, cold air, you part}{@addsp{18}}
 #action {'A Chaos Star' is magical.}{@addsp{10}}
 

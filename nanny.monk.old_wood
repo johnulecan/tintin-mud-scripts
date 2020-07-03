@@ -1,10 +1,37 @@
 #class {nanny.monk.old_wood}{open}
 
-#TICKER {z}{#if {$sp > 80}{bless uruloki};#if {$sp > 80}{bless malediction};heal uruloki;heal malediction}{5}
-#TICKER {zz}{5s;gpic;cake;#2 {ca;drop cake};cakeb;2se;#10 {buy 1};w2n;tree;#10 {buy apple;buy milk};treeb;5n}{60}
-#alias owood_off {#class {nanny.monk.old_wood}{kill}}
+#alias {set_ticker}{
+    #TICKER {do_bless_heal}{do_bless_heal}{5};
+    #TICKER {do_heal_pick}{do_heal_pick}{60};
+}
+#alias {unset_ticker}{
+    #unTICK {do_bless_heal};
+    #untick {do_heal_pick};
+}
+set_ticker;
+
+#alias do_bless_heal {#if {$sp > 80}{bless uruloki};#if {$sp > 80}{bless malediction};heal uruloki;heal malediction}
+#alias {do_heal_pick}{5s;gpic;5n}
+
+
+#alias owood_off {unset_ticker;#class {nanny.monk.old_wood}{kill}}
 #gag {You can only heal someone present.}
 #gag {You feel that %0 does not need any blessing at the moment.}
 #gag {There is no %0 here.}
+
+#tick {m_hb}{m_hb}{2}
+#var at_mass 0;
+#alias {m_hb}{
+    #if {($real_mass_min == 2) && ($at_mass == 0)}{
+        unset_ticker;
+        #var at_mass 1;
+        5s;yard;2s;
+    };
+    #if {($real_mass_min > 60) && ($at_mass == 1)}{
+        #var at_mass 0;
+        2n;yardb;5n;
+        set_ticker;
+    }
+};
 
 #class {nanny.monk.old_wood}{close}
