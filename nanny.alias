@@ -290,8 +290,11 @@ stty cols 175
 #action {Alvis gives Valjm, the legendary great sword of the ancient gods to you.}{out;n2wn;sell sword;s3w}
 #action {Alvis gives Finrod's sword to you.}{out;n2wn;sell sword;s3w}
 
+#tick {look}{l}{600}
+
 #nop quests
 
+#nop schaps
 #alias scha {
 	enter tent;
 	search tent;
@@ -308,8 +311,10 @@ stty cols 175
 	#loop 1 5 cnt {exa worker $cnt};
 }
 
+#nop merlin's hidden treasure
 #alias mht {3e;d;8w;5n;w;2n;w;n;#3 enter door 1}
 
+#nop candles
 #alias candle_key
 {
     9s2e;southeast;e;southeast;e;northeast;2e;northeast;e;5n;3e;s;u;n;
@@ -323,12 +328,6 @@ stty cols 175
     move painting;
     2wsdn3w5sw;southwest;2w;southwest;w;northwest;w;northwest;2w9n;
 }
-
-#tick {look}{l}{600}
-
-#quests
-
-#nop candles
 #alias llo {9s2e;southeast;e;southeast;e;northeast;2e;northeast;e5n}
 #alias llob {5sw;southwest;2w;southwest;w;northwest;w;northwest;2w9n}
 
