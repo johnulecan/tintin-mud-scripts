@@ -5,7 +5,11 @@
 #read nanny.settings
 #read nanny.alias
 
-#read nanny.druid.secret
+#read nanny.prophet.secret
 #EVENT {PROGRAM START}{#ses {NannyMUD Caos}{130.236.254.159}{2000}}
-#event {SESSION CONNECTED}{user_pass;#spl}
+#event {SESSION CONNECTED}{user_pass}
 
+#gag Shell doing: com aspell
+#gag Com: aspell
+#gag Depress who?
+#gag Shell doing: vv

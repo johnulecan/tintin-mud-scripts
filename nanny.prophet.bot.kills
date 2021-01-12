@@ -1,0 +1,422 @@
+#alias pickkill
+{
+    #math {killnr}{$killnr + 1};
+    #if {$killnr > 46}{#var killnr 2};
+    load$killnr;
+    #var iskilling 1;
+}
+
+#alias load1
+{
+    #alias gokill {e7s2w6s2e;southeast;e;southeast;e;northeast;2ne};
+    #alias goback {w2s;southwest;w;northwest;w;northwest;2w6n2e7nw};
+    #var goin s;
+    #var goout n;
+    #var target {guard};
+}
+
+#alias load2
+{
+    #alias gokill {4w4s8w4n;northwest;northwest;n2w2nd2n};
+    #alias goback {2su2s2es;southeast;southeast;4s8e4n4e};
+    #var goin e;
+    #var goout w;
+    #var target {giant-smurf};
+}
+
+#alias load3
+{
+    #alias gokill {e7sw2s4e2s;read red book;northwest;northeast;2n};
+    #alias goback {2s;southeast;southwest;out;2n4w2ne7nw};
+    #var goin e;
+    #var goout w;
+    #var target archangel;
+}
+
+#alias load4
+{
+    #alias gokill {e7sw2s4e2s;read red book;northwest;northeast;2n};
+    #alias goback {2s;southeast;southwest;out;2n4w2ne7nw};
+    #var goin w;
+    #var goout e;
+    #var target archangel;
+}
+
+#alias load5
+{
+    #alias gokill {e7sw2s4e2s;read black book;nwse7nw};
+    #alias goback {4senes;out;2n4w2ne7nw};
+    #var goin n;
+    #var goout s;
+    #var target knight;
+}
+
+#alias load6
+{
+    #alias gokill {e7sw2s4e2s;read black book;nwsw4nne2s};
+    #alias goback {2nws4senes;out;2n4w2ne7nw};
+    #var goin s;
+    #var goout n;
+    #var target demon;
+}
+
+#alias load7
+{
+    #alias gokill {e7sw2s4e2s;read black book;nwsw4nne2sse2nne3s};
+    #alias goback {3nws2swn2nws4senes;out;2n4w2ne7nw};
+    #var goin e;
+    #var goout w;
+    #var target demon;
+}
+
+#alias load8
+{
+    #alias gokill {e7sw2s4e2s;read black book;nwsw4nne2sse2nne3se3n};
+    #alias goback {3sw3nws2swn2nws4senes;out;2n4w2ne7nw};
+    #var goin e;
+    #var goout w;
+    #var target knight;
+}
+
+#alias load9
+{
+    #alias gokill {e7s;enter palace;2e};
+    #alias goback {2w;out;7nw};
+    #var goin s;
+    #var goout n;
+    #var target centaur;
+}
+
+#alias load10
+{
+    #alias gokill {e7s;enter palace;2e};
+    #alias goback {2w;out;7nw};
+    #var goin n;
+    #var goout s;
+    #var target centaur;
+}
+
+#alias load11
+{
+    #alias gokill {e4sen3w;enter portal 2};
+    #alias goback {enter portal;3esw4nw};
+    #var goin n;
+    #var goout s;
+    #var target mercenary;
+}
+
+#alias load12
+{
+    #alias gokill {e4sen3w;enter portal 2};
+    #alias goback {enter portal;3esw4nw};
+    #var goin e;
+    #var goout w;
+    #var target mercenary;
+}
+
+#alias load13
+{
+    #alias gokill {e4sen3w;enter portal 2;2e};
+    #alias goback {2w;enter portal;3esw4nw};
+    #var goin s;
+    #var goout n;
+    #var target mercenary;
+}
+
+#alias load14
+{
+    #alias gokill {e4sen3w;enter portal 2;2e};
+    #alias goback {2w;enter portal;3esw4nw};
+    #var goin n;
+    #var goout s;
+    #var target mercenary;
+}
+
+#alias load15
+{
+    #alias gokill {e4sen3w;enter portal 2;w;enter cave;2n};
+    #alias goback {2s2e;enter portal;3esw4nw};
+    #var goin n;
+    #var goout s;
+    #var target mercenary;
+}
+
+#alias load16
+{
+    #alias gokill {e4sen3w;enter portal 2;2en};
+    #alias goback {s2w;enter portal;3esw4nw};
+    #var goin n;
+    #var goout s;
+    #var target mercenary;
+}
+
+#alias load17
+{
+    #alias gokill {e4sen3w;enter portal 2;2e2n};
+    #alias goback {2s2w;enter portal;3esw4nw};
+    #var goin climb gate;
+    #var goout d;
+    #var target mercenary;
+}
+
+#alias load18
+{
+    #alias gokill {e7s2w4sw2nen4e};
+    #alias goback {4wsw2se4n2e7nw};
+    #var goin e;
+    #var goout w;
+    #var target drow;
+}
+
+#alias load19
+{
+    #alias gokill {e7s2w4sw2nen4e};
+    #alias goback {4wsw2se4n2e7nw};
+    #var goin e;
+    #var goout w;
+    #var target drow;
+}
+
+#alias load20
+{
+    #alias gokill {e7s2w6s;e;e;southeast;e;southeast;e;northeast;e;e;northeast;e;e;e;e;e;e;northeast;e;e;e;e;northeast;e;n;n;northwest;n;n;n;w;w;w;w;n};
+    #alias goback {se;e;e;e;s;s;s;southeast;s;s;w;southwest;w;w;w;w;southwest;w;w;w;w;w;w;southwest;w;w;southwest;w;northwest;w;northwest;w;w;6n2e7nw};
+    #var goin {enter hut};
+    #var goout {out};
+    #var target {male};
+}
+
+#alias load21
+{
+    #alias gokill {e7s2w6s;e;e;southeast;e;southeast;e;northeast;e;e;northeast;e;e;e;e;e;e;northeast;e;e;e;e;northeast;e;n;n;northwest;n;n;n;w;w;w;w;e};
+    #alias goback {we;e;e;e;s;s;s;southeast;s;s;w;southwest;w;w;w;w;southwest;w;w;w;w;w;w;southwest;w;w;southwest;w;northwest;w;northwest;w;w;6n2e7nw};
+    #var goin {enter hut};
+    #var goout {out};
+    #var target {male};
+}
+
+#alias load22
+{
+    #alias gokill {e7s2w6s;e;e;southeast;e;southeast;e;northeast;e;e;northeast;e;e;e;e;e;e;northeast;e;e;e;e;northeast;e;n;n;northwest;n;n;n;w;w;w;w;s};
+    #alias goback {ne;e;e;e;s;s;s;southeast;s;s;w;southwest;w;w;w;w;southwest;w;w;w;w;w;w;southwest;w;w;southwest;w;northwest;w;northwest;w;w;6n2e7nw};
+    #var goin {enter hut};
+    #var goout {out};
+    #var target {male};
+}
+
+#alias load23
+{
+    #alias gokill {e7s2w6s;e;e;southeast;e;southeast;e;northeast;e;e;northeast;e;e;e;e;e;e;northeast;e;e;e;e;northeast;e;n;n;northwest;n;n;n;w;w;w;w;n};
+    #alias goback {se;e;e;e;s;s;s;southeast;s;s;w;southwest;w;w;w;w;southwest;w;w;w;w;w;w;southwest;w;w;southwest;w;northwest;w;northwest;w;w;6n2e7nw};
+    #var goin {enter hut};
+    #var goout {out};
+    #var target {female};
+}
+
+#alias load24
+{
+    #alias gokill {e7s2w6s;e;e;southeast;e;southeast;e;northeast;e;e;northeast;e;e;e;e;e;e;northeast;e;e;e;e;northeast;e;n;n;northwest;n;n;n;w;w;w;w;e};
+    #alias goback {we;e;e;e;s;s;s;southeast;s;s;w;southwest;w;w;w;w;southwest;w;w;w;w;w;w;southwest;w;w;southwest;w;northwest;w;northwest;w;w;6n2e7nw};
+    #var goin {enter hut};
+    #var goout {out};
+    #var target {female};
+}
+
+#alias load25
+{
+    #alias gokill {e7s2w6s;e;e;southeast;e;southeast;e;northeast;e;e;northeast;e;e;e;e;e;e;northeast;e;e;e;e;northeast;e;n;n;northwest;n;n;n;w;w;w;w;s};
+    #alias goback {ne;e;e;e;s;s;s;southeast;s;s;w;southwest;w;w;w;w;southwest;w;w;w;w;w;w;southwest;w;w;southwest;w;northwest;w;northwest;w;w;6n2e7nw};
+    #var goin {enter hut};
+    #var goout {out};
+    #var target {female};
+}
+
+#alias load26
+{
+    #alias gokill {e7s2w6s;e;e;southeast;e;southeast;e;northeast;e;e;northeast;e;e;e;e;e;e;northeast;e;e;e;e;northeast;e;n;n;northwest;n;n;n;w;w;w;w;w};
+    #alias goback {ee;e;e;e;s;s;s;southeast;s;s;w;southwest;w;w;w;w;southwest;w;w;w;w;w;w;southwest;w;w;southwest;w;northwest;w;northwest;w;w;6n2e7nw};
+    #var goin {enter hut};
+    #var goout {out};
+    #var target {chief};
+}
+
+#alias load27
+{
+    #alias gokill {e7sw2s3en;enter portal;2e};
+    #alias goback {2w;enter portal;s3w2ne7nw};
+    #var goin {s};
+    #var goout {n};
+    #var target {squid};
+}
+
+#alias load28
+{
+    #alias gokill {e7sw2s3en;enter portal;2ese};
+    #alias goback {wn2w;enter portal;s3w2ne7nw};
+    #var goin {n};
+    #var goout {s};
+    #var target {squid};
+}
+
+#alias load29
+{
+    #alias gokill {e7sw2s3en;enter portal;2ene};
+    #alias goback {ws2w;enter portal;s3w2ne7nw};
+    #var goin {n};
+    #var goout {s};
+    #var target {squid};
+}
+
+#alias load30
+{
+    #alias gokill {e7sw2s3en;enter portal;2enenese};
+    #alias goback {wnwsws2w;enter portal;s3w2ne7nw};
+    #var goin {n};
+    #var goout {s};
+    #var target {squid};
+}
+
+#alias load31
+{
+    #alias gokill {e7sw2s3en;enter portal;2esenese};
+    #alias goback {wnwswnww;enter portal;s3w2ne7nw};
+    #var goin {n};
+    #var goout {s};
+    #var target {squid};
+}
+
+#alias load32
+{
+    #alias gokill {e7sw2s3en;enter portal;2esenese};
+    #alias goback {wnwswnww;enter portal;s3w2ne7nw};
+    #var goin {s};
+    #var goout {n};
+    #var target {squid};
+}
+
+#alias load33
+{
+    #alias gokill {e7s2w6s2e;southeast;e;southeast;e;northeast;2e;northeast;5ese;climb chain;e;open trapdoor;d};
+    #alias goback {open trapdoor;uw;climb chain;wn5w;southwest;2w;southwest;w;northwest;w;northwest;2w6n2e7nw};
+    #var goin {w};
+    #var goout {e};
+    #var target {pirate};
+}
+
+#alias load34
+{
+    #alias gokill {en;northwest;3es2enw;play chess;3e};
+    #alias goback {3w;stop playing;es2wn3w;southeast;sw};
+    #var goin {e};    
+    #var goout {w};   
+    #var target queen;
+}
+
+#alias load35
+{
+    #alias gokill {en;northwest;3es2enw;play chess;3e};
+    #alias goback {3w;stop playing;es2wn3w;southeast;sw};
+    #var goin {e};    
+    #var goout {w};   
+    #var target king;
+}
+
+#alias load36
+{
+    #alias gokill {en;northwest;3es2enw;play chess;3w};
+    #alias goback {3e;stop playing;es2wn3w;southeast;sw};
+    #var goin {w};    
+    #var goout {e};   
+    #var target queen;
+}
+
+#alias load37
+{
+    #alias gokill {en;northwest;3es2enw;play chess;3w};
+    #alias goback {3e;stop playing;es2wn3w;southeast;sw};
+    #var goin {w};    
+    #var goout {e};   
+    #var target king;
+}
+
+#alias load38
+{
+    #alias gokill {e4sen3w;enter portal 1645;n;#10 search crack;w};
+    #alias goback {ese;#4 climb down;e;enter portal;3esw4nw};
+    #var goin {w}; 
+    #var goout {e};
+    #var target magician;
+}
+
+#alias load39
+{
+    #alias gokill {e7s2w6s;2e;southeast;e;southeast;e;northeast;2e;northeast;6e;northeast;4e;northeast;e;northeast;northeast;n;northeast;northeast;4n;enter gate;4n;2e;northwest;enter;5d;n;2e;2s;southwest;northwest;northeast;southeast;2s2e;southeast;3e};
+    #alias goback {3w;northwest;2w2n;northwest;southwest;southeast;northeast;2n2ws5u;out;southeast;2w4s;out;4s;southwest;southwest;s;southwest;southwest;w;southwest;4w;southwest;6w;southwest;2w;southwest;w;northwest;w;northwest;2w6n2e7nw};
+    #var goin {e};
+    #var goout {w};
+    #var target {captain};
+}
+
+#alias load40
+{
+    #alias gokill {e7s2w6s;2e;southeast;e;southeast;e;northeast;2e;northeast;6e;northeast;4e;northeast;e;northeast;northeast;n;northeast;northeast;4n;enter gate;4n;2e;northwest;enter;5d;n;2e;2s;southwest;northwest;northeast;southeast;2s2e;southeast;3es};
+    #alias goback {n3w;northwest;2w2n;northwest;southwest;southeast;northeast;2n2ws5u;out;southeast;2w4s;out;4s;southwest;southwest;s;southwest;southwest;w;southwest;4w;southwest;6w;southwest;2w;southwest;w;northwest;w;northwest;2w6n2e7nw};
+    #var goin {southwest};
+    #var goout {northeast};
+    #var target {guard};
+}
+
+#alias load41
+{
+    #alias gokill {e7s2w6s;2e;southeast;e;southeast;e;northeast;2e;northeast;6e;northeast;4e;northeast;e;northeast;northeast;n;northeast;northeast;4n;enter gate;4n;2e;northwest;enter;5d;n;2e;2s;southwest;northwest;northeast;southeast;2s2e;southeast;3es;southwest};
+    #alias goback {northeast;n3w;northwest;2w2n;northwest;southwest;southeast;northeast;2n2ws5u;out;southeast;2w4s;out;4s;southwest;southwest;s;southwest;southwest;w;southwest;4w;southwest;6w;southwest;2w;southwest;w;northwest;w;northwest;2w6n2e7nw};
+    #var goin {northwest};
+    #var goout {southeast};
+    #var target {guard};
+}
+
+#alias load42
+{
+    #alias gokill {e7s2w6s;2e;southeast;e;southeast;e;northeast;2e;northeast;6e;northeast;4e;northeast;e;northeast;northeast;n;northeast;northeast;4n;enter gate;4n;2e;northwest;enter;5d;n;2e;2s;southwest;northwest;northeast;southeast;2s2e;southeast;3es;southwest;northwest};
+    #alias goback {southeast;northeast;n3w;northwest;2w2n;northwest;southwest;southeast;northeast;2n2ws5u;out;southeast;2w4s;out;4s;southwest;southwest;s;southwest;southwest;w;southwest;4w;southwest;6w;southwest;2w;southwest;w;northwest;w;northwest;2w6n2e7nw};
+    #var goin {n};
+    #var goout {s};
+    #var target {guard};
+}
+
+#alias load43
+{
+    #alias gokill {e7s2w6s;2e;southeast;e;southeast;e;northeast;2e;northeast;6e;northeast;4e;northeast;e;northeast;northeast;n;northeast;northeast;4n;enter gate;4n;2e;northwest;enter;5d;n;2e;2s;southwest;northwest;northeast;southeast;2s2e;southeast;3es;southwest;northwest;n};
+    #alias goback {s;southeast;northeast;n3w;northwest;2w2n;northwest;southwest;southeast;northeast;2n2ws5u;out;southeast;2w4s;out;4s;southwest;southwest;s;southwest;southwest;w;southwest;4w;southwest;6w;southwest;2w;southwest;w;northwest;w;northwest;2w6n2e7nw};
+    #var goin {n};
+    #var goout {s};
+    #var target {guard};
+}
+
+#alias load44
+{
+    #alias gokill {e7s2w6s;2e;southeast;e;southeast;e;northeast;2e;northeast;6e;northeast;4e;northeast;e;northeast;northeast;n;northeast;northeast;4n;enter gate;4n;2e;northwest;enter;5d;n;2e;2s;southwest;northwest;northeast;southeast;2s2e;southeast;3es;southwest;northwest;2n};
+    #alias goback {2s;southeast;northeast;n3w;northwest;2w2n;northwest;southwest;southeast;northeast;2n2ws5u;out;southeast;2w4s;out;4s;southwest;southwest;s;southwest;southwest;w;southwest;4w;southwest;6w;southwest;2w;southwest;w;northwest;w;northwest;2w6n2e7nw};
+    #var goin {n};
+    #var goout {s};
+    #var target {guard};
+}
+
+#alias load45
+{
+    #alias gokill {e7s2w6s;2e;southeast;e;southeast;e;northeast;2e;northeast;6e;northeast;4e;northeast;e;northeast;northeast;n;northeast;northeast;4n;enter gate;4n;2e;northwest;enter;5d;n;2e;2s;southwest;northwest;northeast;southeast;2s2e;southeast;3es;southwest;northwest;3n};
+    #alias goback {3s;southeast;northeast;n3w;northwest;2w2n;northwest;southwest;southeast;northeast;2n2ws5u;out;southeast;2w4s;out;4s;southwest;southwest;s;southwest;southwest;w;southwest;4w;southwest;6w;southwest;2w;southwest;w;northwest;w;northwest;2w6n2e7nw};
+    #var goin {n};
+    #var goout {s};
+    #var target {guard};
+}
+
+#alias load46
+{
+    #alias gokill {e7s2w6s;2e;southeast;e;southeast;e;northeast;2e;northeast;6e;northeast;4e;northeast;e;northeast;northeast;n;northeast;northeast;4n;enter gate;4n;2e;northwest;enter;5d;n;2e;2s;southwest;northwest;northeast;southeast;2s2e;southeast;3es;southwest;northwest;4n};
+    #alias goback {4s;southeast;northeast;n3w;northwest;2w2n;northwest;southwest;southeast;northeast;2n2ws5u;out;southeast;2w4s;out;4s;southwest;southwest;s;southwest;southwest;w;southwest;4w;southwest;6w;southwest;2w;southwest;w;northwest;w;northwest;2w6n2e7nw};
+    #var goin {northeast};
+    #var goout {southwest};
+    #var target {guard};
+}
+

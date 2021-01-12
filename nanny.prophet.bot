@@ -1,0 +1,452 @@
+#alias stash {e7sw2s4e2s;read grey book;n2wn}
+#alias stashb {s2es;enter portal;2n4w2ne7nw}
+
+#var atkill 0
+
+#conf {SPEEDWALK}{on}
+#conf {PACKET PATCH}{9.99}
+
+#read nanny.prophet.secret
+#EVENT {PROGRAM START}{#ses {NannyMUD Prophet}{130.236.254.159}{2000}}
+#event {SESSION CONNECTED}{user_pass;#spl}
+
+#PROMPT           {[xp%0][%1]}  {[xp%0][%1]}
+#var prep {[<034>N<025>B<016>o<007>t<043>v<052>2<061>.<043>0<088>] }
+
+#nop 1st login
+#action {------------------------------ GENERAL INFO -------------------------------}
+{
+    #delay {2}
+    {
+        #system echo "----------- Start: `date` ---------- " >> nanny.prophet.bot.log;
+        #config log plain;
+        #log {a}{nanny.prophet.log};
+	2sw;withdraw sack;withdraw opal;withdraw opal;tag all;e2s2e7nw;
+        create party;
+	party name Crimsons's partee;
+        party;
+        setchurch;
+	myheartbeat;
+	#math {x}{3d7200};
+        #math {x}{$x+7200};
+        #delay {$x}{gosleep};
+        #spl 11 1;
+	#var container sack;
+    }
+}
+
+#alias gosleep #var timetosleep 1
+#var timetosleep 0
+
+#var church 0
+#alias setchurch {#var church 1;#showme $prep  Old Wood...}
+#alias unsetchurch {#var church 0}
+
+#action {The Old Wood <e w n s>.}{setchurch}
+#action {You are in the Old Wood. It is a dark and mysterious place, where ancient}{setchurch}
+#action {The rolling hills}{unsetchurch}
+#action {The rolling hills, near the river}{unsetchurch}
+#action {A dark room.}{unsetchurch}
+
+#nop getting tox/full/etc for heal
+#var initialxp 0;
+#var initialgc 0;
+#action {[xp:%1 gc:%2][t:%3% s:%4% f:%5% h:%6%]}
+{
+    #var xp %1;
+    #var gc %2;
+    #var tox %3;
+    #var soak %4;
+    #var full %5;
+    #var heal %6;
+    #if {$initialxp == 0}{#var initialxp %1};
+    #if {$initialgc == 0}{#var initialgc %2};
+}
+
+#action {L Crimson       19     %1 %2/%3 %4/%5 %6}
+
+{
+    #var hp %2;
+    #var mhp %3;
+    #var sp %4;
+    #var msp %5;
+}
+
+#action {** HP: %1/%2   SP: %3/%4}
+{
+    #var hp %1;
+    #var mhp %2;
+    #var sp %3;
+    #var msp %4;
+}
+
+#var potion 0;
+#alias getpotion
+{
+    4w2s;
+    southwest;
+    wdend;
+    swswsws4nw4s;
+    get potion;tag potion;
+    4nesene;
+    get pearl;
+    wswnw3suusue;
+    northeast;
+    2n4e;
+}
+
+#nop
+#nop HEARTBEAT
+#nop
+
+#var special 0;
+#alias {myheartbeat}
+{
+    #if {($church == 1) && ($timetosleep == 1)}{
+        e4s2en;sell all from $container;sell all;KARATE;put belt in bin;s2w3s2w2nw;drop all from $container;store all;e2s2e7nw;stash;drop all;#kill;#alias myheartbeat l;
+    };
+
+    #if {($church == 1) && ($potion == 0)}
+    {
+        getpotion;
+        #delay {600}{#var potion 0};
+        #var potion 1;
+    }
+
+
+    #math php {$hp * 100 / $mhp};
+
+    #math {fr}{1d5};
+    #if {$fr == 1}{l};
+    #if {$fr == 2}{party};
+    #showme $prep [HB][C:$church][D:$didsomething][%:$php][HBD:$hbdelay][k:$iskilling][knr:$killnr($target)][S:$special][$fr];
+
+    #var didsomething 0;
+
+    #if {$sp > $hp}
+    {
+        #math {dif}{$sp - $hp};
+    };
+    #else
+    {
+        #math {dif}{$hp - $sp};
+    };
+
+    #if {($dif > 50) && ($sp > 0) && ($hp > 80) && ($church == 1) && ($didsomething == 0) && ($special == 0)}
+    {
+        4w4s3ed7s;southeast;2e;2e;southeast;2e;northeast;4ese;
+        buy special;drink special;put glass in $container;drop glass;
+        wn4w;southwest;2w;northwest;2w2w;northwest;7nu3w4n4e;
+        #var special 1;
+        #delay {120}{#var special 0};
+        #var didsomething 1;
+    };
+
+    #nop healing checks;
+    #if {($church == 1) && ($didsomething == 0) && ($php < 96)}
+    {
+        healme;
+    };
+
+    #if {$php > 100}
+    {
+        #var;
+    };
+
+    #if {($church == 1) && ($didsomething == 0) && ($php > 95) && ($php < 101)}
+    {
+            #showme $prep lets kill!;
+            #if {$iskilling == 0}
+            {
+                pickkill;
+                #var firstround 1;
+            };
+            gokill;grin evil;
+            #var wentkilling 1;            
+            #var didsomething 1;
+    };
+
+    #delay {$hbdelay}{myheartbeat};
+}
+#delay {2}{myheartbeat}
+#alias hbd #var hbdelay
+hbd 4
+
+#var iskilling 0
+#var killnr 0
+
+#gag Crimsons's partee
+#var firstround 0
+#var atkill 0
+
+#action {%0 (%1)}
+{
+    #if {($firstround == 1) && ($atkill == 1)}
+    {
+        #showme {$prep Found %0 [%1] near kill... Skipping!};
+        #system echo "`date` %0 [%1] found near $target($akillnr)" >> nanny.prophet.bot.meet.log;
+	#var oktokill 0;
+    }
+}
+
+#action {%* is in undamaged shape.}
+{
+    #if {($firstround == 1) && ($atkill == 1)}
+    {
+        #var oktokill 1;
+    }
+}
+
+#action {%1 is in %2 shape.}
+{
+    #if {($firstround == 1) && ($atkill == 1)}
+    {
+        #showme {$prep %1 was in %2 shape [$target].};
+        #system echo "`date` %1 was in %2 shape [$target]." >> nanny.prophet.bot.not_my_kill.log;
+        #var oktokill 0;
+    };
+    #if {($killnr == 1)}
+    {
+        #var oktokill 1;
+    };
+}
+{5}
+
+#action {That is not here.}
+{
+    #if {($firstround == 1) && ($atkill == 1)}
+    {
+        #if {($killnr == 1)}
+        {
+            enter;Train;KARATE;n;
+        };
+    	#var oktokill 0;
+    }
+}
+
+#action {Corpse is not a living thing!}
+{
+    #if {($firstround == 1) && ($atkill == 1)}
+    {
+    	#var oktokill 0;
+    }
+}
+
+#action {You grin evilly.}
+{
+    #if {($iskilling == 1) && ($church == 0)}
+    {
+        #var {atkill}{1};
+        $goin;
+        #if {($firstround == 1)}
+        {
+            shape $target;
+        };
+	#var oktokill 1;
+        #delay {2}
+        {
+            #if {($oktokill == 1)}
+            {
+                kill $target;
+                read fury;point me;
+                vv;
+            };
+            #else
+            {
+                #var atkill 0;
+                #var iskilling 0;
+                $goout;
+                #if {($wentkilling == 1)}
+                {
+                    #var wentkilling 0;
+                    goback;
+                };
+            };
+            #var firstround 0;
+        }
+    }
+}
+
+#action {Your legs run %0 with you!}
+{
+    #if {$atkill == 1}
+    {
+        break;break;
+	#var gobackin smile;
+        #if {"%0" == "east"}{#var gobackin west};
+        #if {"%0" == "west"}{#var gobackin east};
+        #if {"%0" == "south"}{#var gobackin north;hmm};
+        #if {"%0" == "north"}{#var gobackin south};
+        #if {"%0" == "northeast"}{#var gobackin southwest};
+        #if {"%0" == "northwest"}{#var gobackin southeast};
+        #if {"%0" == "southeast"}{#var gobackin northwest};
+        #if {"%0" == "southwest"}{#var gobackin northeast};
+        #if {"%0" == "down"}{#var gobackin up};
+        #if {"%0" == "up"}{#var gobackin down};
+        #delay {2}
+        {
+            ;;;
+            $gobackin;
+            $goout;
+            #if {($wentkilling == 1)}
+            {
+                #var wentkilling 0;
+                goback;
+            };
+        }
+        #var atkill 0;
+    }
+}
+
+#alias docorpse
+{
+    #if {($wentkilling == 1)}
+    {
+        #var wentkilling 0;
+        #if {($killnr == 1)}
+        {
+            enter;Train;KARATE;n;
+        };
+        get coins from corpse;
+        put all from corpse in $container;
+        get all from corpse;
+        put all from purse in $container;
+        put all from pouch in $container;
+        put purse in $container;
+        put pouch in $container;
+        put all from ground in $container;
+        break;break;
+        #var iskilling 0;
+        #var {atkill}{0};
+        $goout;
+        goback;
+        e4s2en;sell all from $container;sell all;get glass from $container;put glass in bin;s2w4nw;
+        get coinses from $container;
+    }
+}
+
+#action {No %0 here !}
+{
+    ack;
+    #if {$atkill == 1}
+    {
+        #delay {2}
+        {
+            docorpse
+        }
+    }
+}
+
+#CLASS {nanny.prophet.bot.save} OPEN
+#CLASS {nanny.prophet.bot.save} READ nanny.prophet.bot.save
+#CLASS {nanny.prophet.bot.save} CLOSE
+#action {%0 died.}
+{
+    #if {$atkill == 1}
+    {
+        #delay {2}
+        {
+            docorpse
+        }
+    };
+    #math {gains[%0]}{$gains[%0] + 1};
+    #class matador_save_class write nanny.prophet.bot.save
+}{6}
+
+#action {> %0 died.}
+{
+    #if {$atkill == 1}
+    {
+        #delay {2}
+        {
+            docorpse
+        }
+    };
+    #math {gains[%0]}{$gains[%0] + 1};
+    #class nanny.prophet.bot.save write nanny.prophet.bot.save
+}{4}
+
+#action {You got %0 coins in total.}
+{
+    #math {coins}{$coins + %0};
+    #class nanny.prophet.bot.save write nanny.prophet.bot.save
+}
+
+#action {You take %0 coins from %1}
+{
+    #math {coins}{$coins + %0};
+    #class nanny.prophet.bot.save write nanny.prophet.bot.save
+}
+
+#alias {rip}
+{
+    #math {tgc}{$gc - $initialgc};
+    #math {txp}{$xp - $initialxp};
+
+    #showme {+---------------------------------------------------------};
+    #echo {| %-25s| %+5s}{R.I.P.}{Times};
+    #showme {+---------------------------------------------------------};
+    #foreach {$gains[]} {mob}
+    {
+    	#echo {| %-25s: %+5G}{$mob}{$gains[$mob]};
+    };
+    #showme {+---------------------------------------------------------};
+    #echo {| %+9G coins gained (no expenses).}{$coins};
+    #echo {| %+9G coins gained.}{$tgc};
+    #echo {| %+9G experience gained}{$txp};
+    #showme {+---------------------------------------------------------};
+}
+
+#var {atkill}{0};
+
+#alias {healme}
+{
+    #if {$tox < 101}
+    {
+        e4sene;buy firebreather;drink firebreather;put bottles in $container;drop bottle;wsen;sell all from $container;s2w4nw;
+        #var didsomething 1;
+    };
+    #else
+    {
+        #if {$full < 50}
+        {
+            #math {fr}{1d8};
+            #if {$fr == 1}{4w4sw3s;call eagle;2nwnwn2w;climb mountain;jump;2nd;s;buy 4;ne;southeast;swim;2se;enter boat;2w;northwest;7nu3w4n4e};
+            #if {$fr == 2}{e4sen3w;enter portal 2;2e;buy 1;2w;enter portal;3esw4nw};
+            #if {$fr == 3}{e4s4eu;sit;buy apple;2d4w4nw};
+            #if {$fr == 4}{4w4s2w7sw;buy 2;e7n2e4n4e};
+            #if {$fr == 5}{4w3se2s7e3nw;buy 5;e3s7w2nw3n4e};
+            #if {$fr == 6}{4w3se3se;buy 4;eat cake;drop cake;w3nw3n4e};
+            #if {$fr == 7}{4w5se5u;enter mirror;3w;enter mirror;es2w3s2wn;buy bread;s2e3n2enw;enter mirror;3e;enter mirror;5dw5n4e};
+            #if {$fr == 8}{4w4s13ws;southwest;w2n;enter house;w;buy salad;e;out;2se;northeast;n13e4n4e};
+            #var didsomething 1;
+        };
+        #else
+        {
+            #if {$soak < 70}
+            {
+                #math {fr}{1d6};
+                #if {$fr == 1}{4w4sw3s;call eagle;2nwnwn2w;climb mountain;jump;2nd;s;buy 1;ne;southeast;swim;2se;enter boat;2w;northwest;7nu3w4n4e};
+                #if {$fr == 2}{e4sen3w;enter portal 2;2e;buy 4;2w;enter portal;3esw4nw};
+                #if {$fr == 3}{e4s4eu;sit;buy milk;2d4w4nw};
+                #if {$fr == 4}{4w4s8w4n;northwest;northwest;n2w2nd2n;northeast;buy 1;southwest;2su2s2es;southeast;southeast;4s8e4n4e};
+                #if {$fr == 5}{4w3se2s7e3nw;buy 3;e3s7w2nw3n4e};
+                #if {$fr == 6}{4w4s13ws;southwest;w2n;enter house;w;buy orange juice;e;out;2se;northeast;n13e4n4e};
+                #var didsomething 1;
+            }
+        }
+    }
+}
+
+#gag {Shell doing: com aspell}
+#gag {Com: aspell}
+#gag {Depress who?}
+#gag {Shell doing: vv}
+#gag {You have no spellpoints left.}
+
+
+#alias pu put all from ground in $container
+#alias sel sell all from $container
+
+#read nanny.prophet.bot.kills
+

@@ -1,0 +1,6 @@
+#CLASS {nanny.druid.save} OPEN
+
+#VARIABLE         {aynhil_kill}  {108}
+#VARIABLE         {lark_kill}  {48}
+
+#CLASS {nanny.druid.save} CLOSE

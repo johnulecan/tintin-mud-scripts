@@ -79,7 +79,8 @@
 #nop
 
 #var special 0;
-#var mp 0; 
+#var mp 0;
+
 #alias {myheartbeat}
 {
     #if {($church == 1) && ($timetosleep == 1)}{
@@ -124,7 +125,6 @@
         #if {$mp == 1}{detect magic on star};
         #if {$mp == 3}{feel};
         #if {$mp == 5}{cast light};
-        #if {$mp == 7}{earthwave};
         #var didsomething 1;
     };
     
@@ -141,12 +141,19 @@
     };
 
 
-    #if {($church == 1) && ($didsomething == 0) && ($php > 90) && ($php < 101) && ($psp > 90) && ($psp < 101)}
+    #if {($church == 1) && ($didsomething == 0) && ($php > 90) && ($php < 101) && ($psp > 90) && ($psp < 101) && ($sp > 200)}
     {
         #var didsomething 1;
         #if {$iskilling == 0}
         {
-            pickkill;
+            #if {($chaosbend_on == 1) && ($chaosbend_atkill == 1)}{
+                #showme $prep chaosbended attempt, healing and going back to try kill;
+                #var iskilling 1;
+            };
+            #else {
+                #var chaosbend_atkill 0;
+                pickkill;
+            };
             #var ne 1;
             #if {$chaosmark_on == 1}{
                 #var chaosmarked 0;
@@ -173,6 +180,7 @@
         #if {($sp > 20) && ($exhaust == 0) && ($didsomething == 0)}
         {
            #if {$chaosmarked == 0}{chaosmark $target};
+           summon creature;
            f;
         };
 
@@ -187,6 +195,9 @@
 #alias cmoff #var chaosmark_on 0
 cmoff
 
+#alias cbon #var chaosbend_on 1
+#alias cboff #var chaosbend_on 0
+cbon
 
 #action {You have now claimed}{#var chaosmarked 1}
 #action {You have marked another monster in another room. Hence you can not use the spell here.}{#var chaosmarked 1}
@@ -194,7 +205,7 @@ cmoff
 
 #gag {my_partee %0}{1}
 
-#action {Your mind is too exhausted.}{#var exhaust 1;#delay {2}{#var exhaust 0}};
+#action {Your mind is too exhausted.}{#var exhaust 1;#delay {10}{#var exhaust 0}};
 #action {You are already concentrating on a spell!}{#var exhaust 1;#delay {4}{#var exhaust 0}};
 #var exhaust 0;
 
@@ -241,15 +252,27 @@ cmoff
 }
 
 
+#action {You are currently in a room where Coth rules,}{do_c_room}
 #action {You can sense the divine presence of mighty COTH at this place, and fall to your}{do_c_room}
 #action {You can sense the faintest residue of mighty COTH around here.}{do_c_room}
 #action {COTH has been here, and you think there still might be a chance}{do_c_room}
 #action {You are able to sense the presence of COTH, maybe you should}{do_c_room}
 #action {You are able to feel the hot breath of COTH in your neck,}{do_c_room}
+#var chaosbend_atkill 0;
 #alias do_c_room {
     #if {($ne == 1) && ($atkill == 1)}
     {
         #showme {$prep COTH!!!};
+
+	#if {$chaosbend_on == 1}{
+            #if {$chaosbend_atkill == 0}{
+                chaosbend;
+                #var chaosbend_atkill 1;
+            };
+            #else {
+                #var chaosbend_atkill 0;
+            };
+        };
         #delay {1}{
             #var ne 0;
             #var atkill 0;
@@ -261,18 +284,6 @@ cmoff
     }
 }
 
-#action {You are currently in a room where Coth rules,}{
-    #if {$atkill == 1}
-    {
-        #showme {$prep COTH};
-        #var ne 0;
-        #var atkill 0;
-        #var iskilling 0;
-        #var oktokill 0;
-        $goout;
-        goback;
-    }
-}
 
 #action {%* is in undamaged shape.}
 {
@@ -282,55 +293,17 @@ cmoff
     };
 }{3}
 
-#action {That is not here.}
-{
+#action {You are currently in a room where Coth rules}{bot_do_return}
+#action {That is not here.}{bot_do_return}
+#action {There is no %0 here.}{bot_do_return}
+#action {%1 is in %2 shape.}{bot_do_return}
+#action {%0 (%1)}{bot_do_return}
+
+#alias {bot_do_return} {
     #if {($ne == 1) && ($atkill == 1)}
     {
         #showme {$prep $target not here!};
-        #var ne 0;
-        #var atkill 0;
-        #var iskilling 0;
-        #var oktokill 0;
-        $goout;
-        goback;
-    }
-}
-
-#action {There is no %0 here.}
-{
-    #if {($ne == 1) && ($atkill == 1)}
-    {
-        #showme {$prep $target not here!};
-        #var ne 0;
-        #var atkill 0;
-        #var iskilling 0;
-        #var oktokill 0;
-        $goout;
-        goback;
-    }
-}
-
-#action {%1 is in %2 shape.}
-{
-    #if {($ne == 1) && ($atkill == 1)}
-    {
-        #showme {$prep %1 was in %2 shape [$target].};
-        #system echo "`date` %1 was in %2 shape [$target]." >> nanny.simyarin.chaos.bot.not_my_kill.log;
-        #var ne 0;
-        #var atkill 0;
-        #var iskilling 0;
-        #var oktokill 0;
-        $goout;
-        goback;
-    }
-}{4}
-
-#action {%0 (%1)}
-{
-    #if {($ne == 1) && ($atkill == 1)}
-    {
-        #showme {$prep Found %0 [%1] near kill... Skipping!};
-        #system echo "`date` %0 [%1] found near $target[$akillnr]" >> nanny.simyarin.chaos.bot.meet.log;
+        #var chaosbend_atkill 0;
         #var ne 0;
         #var atkill 0;
         #var iskilling 0;
@@ -342,11 +315,12 @@ cmoff
 
 #var totalspnow 0;
 #action {You cast Light and start to illuminate the room.}{@addsp{10}}
-#action {You start to focus on 'Ostaryn Pallalar-Faeth'.}{@addsp{2}}
-#action {You start to focus on 'Evarelara Pallalar-Faeth'.}{@addsp{2}}
-#action {You start to focus on 'Ilasse Pallalar-Faeth'.}{@addsp{2}}
-#action {You start to focus on 'Ysara Pallalar-Faeth'.}{@addsp{5}}
-#action {When you feel that you are surrounded by nothing but icy, cold air, you part}{@addsp{18}}
+#action {You start to focus on 'Ostaryn Pallalar-Faeth'.}{@addsp{2};#var sp_to_add_next_fire 18}
+#action {You start to focus on 'Evarelara Pallalar-Faeth'.}{@addsp{2};#var sp_to_add_next_fire 18}
+#action {You start to focus on 'Ilasse Pallalar-Faeth'.}{@addsp{2};#var sp_to_add_next_fire 18}
+#action {You start to focus on 'Ysara Pallalar-Faeth'.}{@addsp{5};#var sp_to_add_next_fire 20}
+#action {When you feel that you are surrounded by nothing but icy, cold air, you part}{@addsp{$sp_to_add_next_fire}}
+#action {As you weaves the pattern of the world changes and you}{@addsp{200}}
 #action {'A Chaos Star' is magical.}{@addsp{10}}
 
 #function {addsp}
@@ -587,3 +561,4 @@ cmoff
 #read nanny.simyarin.chaos.bot.secret
 #EVENT {PROGRAM START}{#ses {NannyMUD Chaos}{130.236.254.159}{2000}}
 #event {SESSION CONNECTED}{user_pass;#spl}
+

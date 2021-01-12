@@ -1,0 +1,3 @@
+#read nanny.wiz.secret
+#EVENT {PROGRAM START}{#ses {NannyMUD Monk}{130.236.254.159}{2000}}
+#event {SESSION CONNECTED}{#spl;user_pass}

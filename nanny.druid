@@ -1,0 +1,105 @@
+#action {^A dark room.$}{#var exits <100>dark_room<088>}{1}
+#action {^The village green <%1> [h].$}{#var wimpydir none;#var exits <120>%1<088>}{2}
+#action {<> [h].}{#var exits <170>no_exit<088>}{3}
+#action {<>.}{#var exits <170>no_exit<088>}{4}
+#action {<%1> [h].}{#var exits <140>%1<088>}{3}
+#action {<%1>.}{#var exits <140>%1<088>}{4}
+
+#PROMPT {[xp%0][%1]}{[xp%0][%1][$barkskin][$wimpydir] <$exits>}
+
+#nop ALIAS
+#alias adv 9w7s2w2s
+#alias advb 2n2e7n9e
+#ALIAS {kh}{9w7s2w3sd;heal;u3n2e7n9e}
+
+#read nanny.settings
+#read nanny.alias
+
+#read nanny.druid.secret
+#EVENT {PROGRAM START}{#ses {NannyMUD Caos}{130.236.254.159}{2000}}
+#event {SESSION CONNECTED}{user_pass}
+
+#high {[-Druids-]}{red}
+
+
+#action {------------------------------ GENERAL INFO -------------------------------}
+{
+	out;
+	2s2wsw;withdraw all;
+	en;
+	wear all;
+	staff;
+	pmp;
+	gpo;
+	wield staff;
+	exa key;
+	#delay {4}{darthide all};
+}
+
+#alias pmp {11e4n3e8s2w;pump muscles;2e8n3w4s11w;}
+
+#var barkskin {no_barkskin}
+#action {Your barkskin fades away into nothingness.}{#var barkskin {no_barkskin};#cr}
+#action {Your skin grows hard and coarse as %1 bark before your very eyes!}{#var barkskin {<020>barkskin<088>};#cr}
+#action {Your skin grows extra hard and coarse as %1 bark, obviously inspired by the trees around you.}{#var barkskin {<120>extra_barkskin<088>};#cr}
+
+#high {Nature still supports you.}{tan}
+#high {You are still in perfect harmony with Nature.}{tan}
+#high {The wooden staff flies through the air like a bird in the surrounding forest.}{tan}
+#high {You feel very secure here in the forest and dare a brave attack.}{tan}
+#high {You maintain the special connection to all living things.}{tan}
+#high {You feel in total balance with the nature.}{tan}
+#high {Magical power is transferred from the surrounding trees to your staff.}{tan}
+#high {You uphold the special link to Nature.}{tan}
+#high {You still feel in close contact with Nature.}{tan}
+#high {Nature is still protecting you.}{tan}
+
+#high {Your feet turn normal again.}{b red}
+#high {Your feet grow extra long roots, obviously inspired by the trees around you.}{b red}
+#high {Your feet turn into roots and bury themselves deep into the ground.}{b red}
+
+#high {%1 Thorn %2%}{red}
+
+#var wimpydir none;
+#action {You are walking along a dusty and dirty track on the outskirts of the Lars}{#var wimpydir none;}
+#action {Your legs run %0 with you!}{#var wimpydir {<010>%0<088>};#cr}
+
+#gag {^You are too weak to do that right now.$}
+#gag {^You cannot summon up such powers here.$}
+#gag {^Such actions are forbidden here.$}
+#gag {^You can't find any target here.$}
+#gag {^The powers of nature can't help you here.$}
+#gag {^Throw spores at whom?$}
+#gag {^Shell doing: com aspell$}
+#gag {^Com: aspell$}
+#gag {^Shell doing: vv$}
+
+#action {^[-Druids-] %0}{addtop [-Druids-] %0}
+#action {[Party] Thorn: heal}{#nop}{1}
+
+#alias sho {2e2n;enter tree;e;store all from sack;store all from pack;w;out;2sen;sell all from sack;sell all from pack;s3w}
+
+#class {nanny.druid.save} open
+#class {nanny.druid.save} read nanny.druid.save
+#class {nanny.druid.save} close
+
+#action {^Sir Aynhil died.}{
+	#math {aynhil_kill}{$aynhil_kill + 1};
+	#class {nanny.druid.save} write nanny.druid.save
+}
+
+#action {^> Sir Aynhil died.}{
+	#math {aynhil_kill}{$aynhil_kill + 1};
+	#class {nanny.druid.save} write nanny.druid.save
+}
+
+#action {^Lark died.}{
+	#math {lark_kill}{$lark_kill + 1};
+	#class {nanny.druid.save} write nanny.druid.save
+}
+
+#action {^> Lark died.}{
+	#math {lark_kill}{$lark_kill + 1};
+	#class {nanny.druid.save} write nanny.druid.save
+}
+

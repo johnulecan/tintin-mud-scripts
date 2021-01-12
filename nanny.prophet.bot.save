@@ -1,0 +1,5 @@
+#CLASS {nanny.prophet.bot.save} OPEN
+
+#VARIABLE         {gains}  {{Archangel}{347}{Giant-smurf}{13}{Gregory}{64}{Jonathan}{140}{Rock'n'roll Santa}{3}{The archer}{133}{The black king}{141}{The black queen}{143}{The boxing demon}{28}{The centaur}{365}{The drow}{333}{The dwarf}{1}{The dwarf captain}{115}{The dwarf towerguard}{443}{The dwarf wallguard}{339}{The female}{225}{The guard}{1}{The magician}{18}{The male}{235}{The mercenary}{323}{The oblivion knight}{331}{The plain demon}{33}{The priest}{1}{The rat}{1}{The shabby mercenary}{145}{The sorcerer}{447}{The squid}{927}{The stone demon}{27}{The tiger demon}{32}{The tribe chief}{160}{The vampire demon}{35}{The whipping demon}{31}{The white king}{137}{The white queen}{137}{The woodcutter demon}{30}}
+
+#CLASS {nanny.prophet.bot.save} CLOSE

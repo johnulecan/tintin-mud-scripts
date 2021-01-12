@@ -2,7 +2,7 @@
 #alias {2}{southwest}
 #alias {3}{northeast}
 #alias {4}{northwest}
-#alias {enter ship}
+#alias {5}{enter ship}
 
 #alias {11}{buy 1}
 #alias {22}{buy 2}
@@ -13,7 +13,36 @@
 #alias {77}{buy 7}
 #alias {88}{buy 8}
 #alias {99}{buy 9}
-#alias {sp}{buy special;drink special;put glasses in $container}
+#alias {sp}{buy special;drink special;pp glasses}
+
+#alias sla {11e4n3es7es2en;move brick}
+#alias slab {s2wn7wn3w4s11w}
+
+#alias bl1 {4w6n;climb up;un;4;nd}
+#alias bl1b {us;1;s2d6s4e}
+
+#alias {td1}{3se2s4e2s;read black book;nwsw5ne2s}
+#alias {td1b}{2nw5senes;out;2n4w2nw3n}
+#alias {td2}{3se2s4e2s;read black book;enese5nw2s}
+#alias {td2b}{2ne5swnwsw;out;2n4w2nw3n}
+
+#alias {ah} {23w2n;4;2nenene10n;climb tree;e;1;s;say heal please}
+#alias {ahb} {n;4;wd16s;1;2s23e}
+
+#alias vaj {4w2n;2;s;3se2s}
+#alias vajb {neesswen;n;3;2s4e}
+
+#alias hf {9s3w;4;6w4ne;3}
+#alias hfb {2;w4s6e;1;3e9n} 
+
+#ALIAS {yard}{3s2w2ne}
+#ALIAS {yardb}{w2s2e3n}
+
+#alias opal {3se2s4e2s;read grey book;get opal;tag pearl;enter portal;2n4w2nw3n}
+#alias gpo {4w2n;southwest;wdendswswsws4nw4s;get potion;tag potion;4nesene;get pearl;wswnw3suusue;northeast;2s4e;}
+
+#alias stash {8s3e2nw3nwn}
+#alias stashb {se3se2s3w8n}
 
 #alias {ab}{9s;2e;southeast;e;southeast;e;northeast;2e;northeast;6e;northeast;4e;northeast;e;northeast;northeast;n;northeast;northeast;4n;enter gate;4n;2e;northwest;enter;5d;n;2e;2s;southwest;northwest;northeast;southeast;2s}
 #alias {abb}{2n;northwest;southwest;southeast;northeast;2n2ws5u;out;southeast;2w4s;out;4s;southwest;southwest;s;southwest;southwest;w;southwest;4w;southwest;6w;southwest;2w;southwest;w;northwest;w;northwest;2w9n}
@@ -59,7 +88,6 @@
 #alias {dk2}{de6s;climb down rope;out;2en;open trapdoor;ue;1}
 #alias {dk2b}{4;w;wash floor;open trapdoor;ds2w;out;nn;push wall;enw;mount dragon;fly to garden}
 #alias {do}{donate %0}
-#alias {dr}{drink water}
 #alias {drow}{7sw2nen4e}
 #alias {drowb}{4wsw2se7n}
 #alias {dung}{17ws;southwest;w2n;enter house;nw;pull hook;2d}
@@ -123,7 +151,7 @@
 #alias {ogrepb}{e3sd3w7n6e}
 #alias {orb}{grol;n;knock on gate;n2e3ne;buy 5;secure orb;w3s2w2s;grolb}
 #alias {pearl}{4w2n;southwest;wdend}
-#alias {pearlb}{get pearl;wswnw3suusue;northeast;2s4e}
+#alias {pearlb}{get pearl;wswnw3s;get potion;uusue;northeast;2s4e}
 #alias {py}{4w6n;climb up;un;3;3;n;3;n;3;n}
 #alias {pyb}{s;2;s;2;s;d;2;s;2d6s4e}
 #alias {pyr}{4w6n;climb up;u;n;3;3;n;3;n;3;nnen;3;e}
@@ -192,16 +220,134 @@
 
 #alias {alv}{5es;enter ship;give $container to alvis;#delay {3}{out;n5w}}
 #alias {container}{#variable container %0}
-#alias {ep}{exa $container}
-#alias {gc}{get coins from $container}
-#alias {gp}{get %0 from $container}
+#alias {ep}{sack;exa $container;pack;exa $container}
+#alias {gc}{sack;get coins from $container;pack;get coins from $container}
+#alias {gp}{sack;get %0 from $container;pack;get %0 from $container}
 #alias {jar}{container jar}
 #alias {pack}{container pack}
-#alias {pp}{put %0 in $container}
-#alias {pu}{put all from ground in $container}
-#alias {pune}{put all from corpses in $container}
+#alias {pp}{sack;put %0 in $container;pack;put %0 in $container}
+#alias {pu}{sack;put all from ground in $container;pack;put all from ground in $container;}
+#alias {pune}{sack;put all from corpses in $container;pack;put all from corpses in $container}
 #alias {sack}{container sack}
-#alias {sel}{sell all from $container}
-#alias {vp}{value all from $container}
+#alias {sel}{sack;sell all from $container;pack;sell all from $container}
+#alias {vp}{sack;value all from $container;pack;value all from $container}
 #alias {sho}{3en;sel;s3w}
 #alias {psp}{pss $coins}
+
+#nop --------------
+#ALIAS {addtop}
+{
+        #format {long_message} {%.175s} {@time{} | %0};
+        #list {message} {add} {$long_message};
+        #variable i -1;
+        #loop {-10} {-1} {line}
+        {
+                #showme {$message[$line]}{$i};
+                #math {i}{$i - 1}
+        }
+}
+{5}
+
+#FUNCTION {time}
+{
+        #if {"%0" == ""}
+        {
+                #format {epoch} {%T}
+        };
+        #else
+        {
+                #variable epoch %0
+        };
+        #format {result} {%t} {{%T}{$epoch}}
+}
+
+#split 11 1;
+
+#action {^You told %1: %2}{addtop <130>You told %1: %2<088>}
+#action {^%w tells you: %*}{addtop <130>%1 tells you: %2<088>}
+#action {^You reply to %1: %2}{addtop <130>You reply to %1: %2<088>}
+#action {^%w replies to you: %*}{addtop <130>%1 replies to you: %2<088>}
+#action {^[Party] %0}{addtop <030>[Party]<088> %0}
+#action {^%1 invites you to join the party %0}{addtop <030>[Party]<088> invite from %1 to %0}
+#action {^[Paragon] %0}{addtop [Paragon] %0}
+#action {^[Treasure] %0}{addtop [Treasure] %0}
+#action {^[=|-COMBAT-|=] %0}{addtop [=|-COMBAT-|=] %0}
+
+#high {[Party]}{yellow}
+#high {[Paragon]}{light blue}
+#high {[Treasure]}{cyan}
+#high {[=|-COMBAT-|=]}{cyan}
+stty cols 175
+
+#action {You got %1 coins in total.}{#var coins %1}
+
+#nop clubs
+#alias pir {5es;enter ship;give sack to alvis}
+#alias vajp {5es;enter ship;give sword to alvis}
+#alias finp {5es;enter ship;give sword to alvis}
+
+#action {Alvis gives a rock'n'roll sack to you.}{out;n5w}
+#action {Alvis gives Valjm, the legendary great sword of the ancient gods to you.}{out;n2wn;sell sword;s3w}
+#action {Alvis gives Finrod's sword to you.}{out;n2wn;sell sword;s3w}
+
+#nop quests
+
+#alias scha {
+	enter tent;
+	search tent;
+	search bed;
+	search clothes;
+	search tarpaulin;
+	search blanket;
+	crawl under bed;
+	search dust;
+	get bottle;
+	out;
+	get bottle;
+	out;
+	#loop 1 5 cnt {exa worker $cnt};
+}
+
+#alias mht {3e;d;8w;5n;w;2n;w;n;#3 enter door 1}
+
+#alias candle_key
+{
+    9s2e;southeast;e;southeast;e;northeast;2e;northeast;e;5n;3e;s;u;n;
+    search carpet;move carpet;get key;
+    2e;2n;
+    e;close bible;get key;2w;close bible;get key;e;
+    4se;
+    exa desk;exa stuff;exa chair;exa bed;
+    search desk;search stuff;search chair;search bed;
+    w2n;
+    move painting;
+    2wsdn3w5sw;southwest;2w;southwest;w;northwest;w;northwest;2w9n;
+}
+
+#tick {look}{l}{600}
+
+#quests
+
+#nop candles
+#alias llo {9s2e;southeast;e;southeast;e;northeast;2e;northeast;e5n}
+#alias llob {5sw;southwest;2w;southwest;w;northwest;w;northwest;2w9n}
+
+#nop barb
+#alias bar {5e4s;1;2e;1;2e;1;climb chain;n3u;climb ladder;pull lever}
+#alias barb {s;descend chain;4;2w;4;2w;4;4n5w}
+#alias {brest}{4d5e;3;1;2;climb mountain;n;say restore me}
+#action {Hermes coughs into his hand and in a flash your items appear at his feet.}{get all;remove cloak;wear robe;exa robe;brestb}
+#alias {brestb}{s;climb down;3;4;2;4w;enter tower}
+#action {Calvino says: We have arrived at Moon Tower and are disembarking.}{
+        #action worm #bell
+        #action Worm #bell
+	#high worm red
+	#high Worm red
+}
+#action {Calvino says: We have arrived at Garden Tower and are disembarking.}{
+        #unaction worm
+        #unaction Worm
+	#unhigh worm
+	#unhigh Worm
+}
+#alias {bworm}{2en2en2en5en;dive;get worm;1;get worm;1;get worm;1;get worm;e;get worm;e;get worm;e;get worm;w;get worm;4;get worm;w;get worm;d;get worm;e;get worm;d;get worm;u;1;get worm;w;get worm;4;get worm;u;w;4;4;u;s5ws2ws2wsw;enter tower;i}
