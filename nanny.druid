@@ -16,7 +16,7 @@
 #read nanny.alias
 
 #read nanny.druid.secret
-#EVENT {PROGRAM START}{#ses {NannyMUD Caos}{130.236.254.159}{2000}}
+#EVENT {PROGRAM START}{#ses {NannyMUD Druid}{130.236.254.159}{2000}}
 #event {SESSION CONNECTED}{user_pass}
 
 #high {[-Druids-]}{red}
@@ -32,7 +32,6 @@
 	pmp;
 	gpo;
 	wield staff;
-	exa key;
 	#delay {4}{darthide all};
 }
 
@@ -43,26 +42,30 @@
 #action {Your skin grows hard and coarse as %1 bark before your very eyes!}{#var barkskin {<020>barkskin<088>};#cr}
 #action {Your skin grows extra hard and coarse as %1 bark, obviously inspired by the trees around you.}{#var barkskin {<120>extra_barkskin<088>};#cr}
 
-#high {Nature still supports you.}{tan}
-#high {You are still in perfect harmony with Nature.}{tan}
-#high {The wooden staff flies through the air like a bird in the surrounding forest.}{tan}
-#high {You feel very secure here in the forest and dare a brave attack.}{tan}
-#high {You maintain the special connection to all living things.}{tan}
-#high {You feel in total balance with the nature.}{tan}
-#high {Magical power is transferred from the surrounding trees to your staff.}{tan}
-#high {You uphold the special link to Nature.}{tan}
-#high {You still feel in close contact with Nature.}{tan}
-#high {Nature is still protecting you.}{tan}
+#high {^Nature still supports you.}{tan}
+#high {^You are still in perfect harmony with Nature.}{tan}
+#high {^The wooden staff flies through the air like a bird in the surrounding forest.}{tan}
+#high {^You feel very secure here in the forest and dare a brave attack.}{tan}
+#high {^You maintain the special connection to all living things.}{tan}
+#high {^You feel in total balance with the nature.}{tan}
+#high {^Magical power is transferred from the surrounding trees to your staff.}{tan}
+#high {^You uphold the special link to Nature.}{tan}
+#high {^You still feel in close contact with Nature.}{tan}
+#high {^Nature is still protecting you.}{tan}
+#high {^You still feel very protected.}{tan}
+#high {^Nature and you are still in close contact.}{tan}
 
-#high {Your feet turn normal again.}{b red}
-#high {Your feet grow extra long roots, obviously inspired by the trees around you.}{b red}
-#high {Your feet turn into roots and bury themselves deep into the ground.}{b red}
+#high {^With furious force you attack the unnaturally ugly %1}{bold white}.
+
+#high {^Your feet turn normal again.}{b red}
+#high {^Your feet grow extra long roots, obviously inspired by the trees around you.}{b red}
+#high {^Your feet turn into roots and bury themselves deep into the ground.}{b red}
 
 #high {%1 Thorn %2%}{red}
 
 #var wimpydir none;
-#action {You are walking along a dusty and dirty track on the outskirts of the Lars}{#var wimpydir none;}
-#action {Your legs run %0 with you!}{#var wimpydir {<010>%0<088>};#cr}
+#action {^You are walking along a dusty and dirty track on the outskirts of the Lars}{#var wimpydir none;}
+#action {^Your legs run %0 with you!}{#var wimpydir {<010>%0<088>};#cr}
 
 #gag {^You are too weak to do that right now.$}
 #gag {^You cannot summon up such powers here.$}
@@ -103,3 +106,11 @@
 	#class {nanny.druid.save} write nanny.druid.save
 }
 
+#action {^Suddenly an arrow hits you in}{
+	#delay {1}{
+		#if {"$wimpydir" != "none"}{
+			#var wimpydir none;
+			w;elfb
+		}
+	}
+}

@@ -6,9 +6,18 @@ mobs:
 chicken: atharis w;n;10w;4;4;4;4;4n;3w;2s;w;s;climb tree;pull vine
 clam: xenios (27w;ferry) e
 crab: xenios (27w;ferry) e
+ferret: danny
+horse: dannoc/grolldor, traste (9s4e2nw)
 lobster: xenios (27w;ferry) e
+magpie: kerish
+mhoul: carrion, enter well
 pig: atharis w;n;10w;4;4;4;4;4n;3w;2s;w;s;climb tree;pull vine
+trasher: kerish
+turtle: vincent 
 viper: gemf (2e7n4ew,wait for crash,out;open door;s;say permission;n;w;open door;nw;nw;w;climb tree)
+wasp: danny
+wolverine: hunters
+
 
 clubs:
 dart: (light) 6e;d;n;search debris;get dart;u;all e;n;return dart

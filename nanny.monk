@@ -93,14 +93,13 @@
 	2sw;
 	withdraw all;
 	en;
-	candle_key;
 	yard;
 	pic;
 	s;
 	read note;
 	s;
 	pray to lars;
-	exa key;
+	#delay {1}{#cr};
 }
 #alias owood #read nanny.monk.old_wood
 

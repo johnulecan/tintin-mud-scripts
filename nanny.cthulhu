@@ -1,0 +1,73 @@
+#action {^A dark room.$}{#var exits <100>dark_room<088>}{1}
+#action {^The village green <%1> [h].$}{#var wimpydir none;#var exits <120>%1<088>}{2}
+#action {<> [h].}{#var exits <170>no_exit<088>}{3}
+#action {<>.}{#var exits <170>no_exit<088>}{4}
+#action {<%1> [h].}{#var exits <140>%1<088>}{3}
+#action {<%1>.}{#var exits <140>%1<088>}{4}
+
+#PROMPT {[xp%0][%1]}{[xp%0][%1][$trance][$sanity][$wimpydir] <$exits>}
+
+#read nanny.settings
+#read nanny.alias
+
+#read nanny.cthulhu.secret
+#EVENT {PROGRAM START}{#ses {NannyMUD Cth}{130.236.254.159}{2000}}
+#event {SESSION CONNECTED}{user_pass;#delay {4}{sc}}
+
+#action {------------------------------ GENERAL INFO -------------------------------}
+{
+	#delay {4}{darthide all};
+	ws;out;s;ctb;sw;withdraw all;wear all;wield sword;en;
+}
+
+#alias pmp {11e4n3e8s2w;pump muscles;2e8n3w4s11w;}
+
+#var wimpydir none;
+#action {You are walking along a dusty and dirty track on the outskirts of the Lars}{#var wimpydir none;}
+#action {Your legs run %0 with you!}{#var wimpydir {<010>%0<088>};#cr}
+
+#high {( Cthulhu )}{red}
+#action {^( Cthulhu ) %0}{addtop ( Cthulhu ) %0}
+#action {[Party] Rouge: heal}{#nop}{1}
+
+#gag {Shell doing: com aspell}
+#gag {Com: aspell}
+#gag {Shell doing: vv}
+#gag {Shell doing: point me}
+#gag {Shell: Finished.}
+#gag {Your mind is too weak to cast this spell.}
+#gag {Shell doing: com read fury}
+#gag {Com: read fury}
+
+#gag {You can't feel the destructive part of the Mythos in this area.}
+#gag {This spell needs a target.}
+#gag {You can't focus your mind here.}
+#gag {You can't use any spell-powers while in trance.}
+
+#alias sho {3en;sell all from sack;sell all from pack;s3w}
+#alias jj {ct;n;enter;2e;j;2w;out;s;ctb}
+
+#high {** You are %1}{light yellow}
+
+#function {colourize_sanity} {
+	#var sanity_raw {%0};
+	#var sanity {<110>$sanity_raw<088>};
+	#if {"$sanity_raw" == "completely sane"}{#var sanity {<170>$sanity_raw<088>};};
+	#if {"$sanity_raw" == "almost completely sane"}{#var sanity {<170>$sanity_raw<088>};};
+	#if {"$sanity_raw" == "not completely sane"}{#var sanity {<020>$sanity_raw<088>};};
+	#if {"$sanity_raw" == "mostly sane"}{#var sanity {<020>$sanity_raw<088>};};
+	#if {"$sanity_raw" == "pretty sane"}{#var sanity {<120>$sanity_raw<088>};};
+	#if {"$sanity_raw" == "rather sane"}{#var sanity {<120>$sanity_raw<088>};};
+	#if {"$sanity_raw" == "not very sane"}{#var sanity {<130>$sanity_raw<088>};};
+	#if {"$sanity_raw" == "only slightly sane"}{#var sanity {<130>$sanity_raw<088>};};
+	#if {"$sanity_raw" == "almost insane"}{#var sanity {<010>$sanity_raw<088>};};
+	#if {"$sanity_raw" == "slightly insane"}{#var sanity {<010>$sanity_raw<088>};};
+	#return $sanity;
+}
+
+#action {** You are %1.}{#var sanity @colourize_sanity{%1};#cr}
+#action {| HP: %1 | You are %2 |}{#var sanity @colourize_sanity{%2};#cr}
+
+#action {You put yourself in a trance.}{#var trance {<110>trance<088>};#cr}
+#action {You put yourself out of the trance.}{#var trance {-};#cr}
+#var trance {-}

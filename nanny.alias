@@ -41,8 +41,17 @@
 #alias opal {3se2s4e2s;read grey book;get opal;tag pearl;enter portal;2n4w2nw3n}
 #alias gpo {4w2n;southwest;wdendswswsws4nw4s;get potion;tag potion;4nesene;get pearl;wswnw3suusue;northeast;2s4e;}
 
+#alias mh {seun;enter mirror;nenewes;say east}
+#alias mhb {sewenenesdwn}
+
+#alias ct {4w5nw3n;3}
+#alias ctb {2;3se5s4e}
+
 #alias stash {8s3e2nw3nwn}
 #alias stashb {se3se2s3w8n}
+
+#alias mt {4w5n5wn4ws3w;4;sw}
+#alias mtb {en;1;3en4es5e5s4e}
 
 #alias {ab}{9s;2e;southeast;e;southeast;e;northeast;2e;northeast;6e;northeast;4e;northeast;e;northeast;northeast;n;northeast;northeast;4n;enter gate;4n;2e;northwest;enter;5d;n;2e;2s;southwest;northwest;northeast;southeast;2s}
 #alias {abb}{2n;northwest;southwest;southeast;northeast;2n2ws5u;out;southeast;2w4s;out;4s;southwest;southwest;s;southwest;southwest;w;southwest;4w;southwest;6w;southwest;2w;southwest;w;northwest;w;northwest;2w9n}
@@ -98,8 +107,8 @@
 #alias {dwab}{3su;1;e;1;climb down;e15s2w}
 #alias {dwarf}{2en4w;enter mirror;2w;enter mirror;es2wn}
 #alias {dwarfb}{2enw;enter mirror;2e;enter mirror;4es2w}
-#alias {elf}{2e15nw;climb mountain;e;northeast;n;northeast;jump gap;southeast;2s;southeast}
-#alias {elfb}{northwest;2n;northwest;jump gap;southwest;s;southwest;w;climb down;e15s2w}
+#alias {elf}{2e15nw;climb mountain;e;northeast;n;northeast;jump gap;southeast;2s;southeast;climb tree}
+#alias {elfb}{d;northwest;2n;northwest;jump gap;southwest;s;southwest;w;climb down;e15s2w}
 #alias {fae}{song;2e;climb mountain;fly;2n}
 #alias {faeb}{2s;fly back;climb down;2w;songb}
 #alias {fal}{24s3u;rf;3d24n}
@@ -237,7 +246,7 @@
 #nop --------------
 #ALIAS {addtop}
 {
-        #format {long_message} {%.175s} {@time{} | %0};
+        #format {long_message} {%.150s} {@time{} | %0};
         #list {message} {add} {$long_message};
         #variable i -1;
         #loop {-10} {-1} {line}
@@ -272,22 +281,26 @@
 #action {^[Paragon] %0}{addtop [Paragon] %0}
 #action {^[Treasure] %0}{addtop [Treasure] %0}
 #action {^[=|-COMBAT-|=] %0}{addtop [=|-COMBAT-|=] %0}
+#action {^|L| %0}{addtop |L| %0} 
 
 #high {[Party]}{yellow}
 #high {[Paragon]}{light blue}
 #high {[Treasure]}{cyan}
 #high {[=|-COMBAT-|=]}{cyan}
-stty cols 175
+#high {|L|}{<170>}
+stty cols 150
+
+#high {You make a mental note to remember that hit.}{b white}
 
 #action {You got %1 coins in total.}{#var coins %1}
 
 #nop clubs
 #alias pir {5es;enter ship;give sack to alvis}
-#alias vajp {5es;enter ship;give sword to alvis}
+#alias vajp {open door;w;pp shield;get sword;2e;vajb;5es;enter ship;give sword to alvis}
 #alias finp {5es;enter ship;give sword to alvis}
 
 #action {Alvis gives a rock'n'roll sack to you.}{out;n5w}
-#action {Alvis gives Valjm, the legendary great sword of the ancient gods to you.}{out;n2wn;sell sword;s3w}
+#action {Alvis gives Valjm, the legendary great sword of the ancient gods to you.}{out;n2wn;sell sword;s3w;gp shield;wear shield}
 #action {Alvis gives Finrod's sword to you.}{out;n2wn;sell sword;s3w}
 
 #tick {look}{l}{600}
@@ -337,16 +350,16 @@ stty cols 175
 #alias {brest}{4d5e;3;1;2;climb mountain;n;say restore me}
 #action {Hermes coughs into his hand and in a flash your items appear at his feet.}{get all;remove cloak;wear robe;exa robe;brestb}
 #alias {brestb}{s;climb down;3;4;2;4w;enter tower}
-#action {Calvino says: We have arrived at Moon Tower and are disembarking.}{
-        #action worm #bell
-        #action Worm #bell
-	#high worm red
-	#high Worm red
-}
-#action {Calvino says: We have arrived at Garden Tower and are disembarking.}{
-        #unaction worm
-        #unaction Worm
-	#unhigh worm
-	#unhigh Worm
-}
-#alias {bworm}{2en2en2en5en;dive;get worm;1;get worm;1;get worm;1;get worm;e;get worm;e;get worm;e;get worm;w;get worm;4;get worm;w;get worm;d;get worm;e;get worm;d;get worm;u;1;get worm;w;get worm;4;get worm;u;w;4;4;u;s5ws2ws2wsw;enter tower;i}
+#alias {bworm}{2en2en2en5en;dive;exa filth;search filth;exa bottom;search bottom;get worm;1;exa filth;search filth;exa bottom;search bottom;get worm;1;exa filth;search filth;exa bottom;search bottom;get worm;1;exa filth;search filth;exa bottom;search bottom;get worm;e;exa filth;search filth;exa bottom;search bottom;get worm;e;exa filth;search filth;exa bottom;search bottom;get worm;e;exa filth;search filth;exa bottom;search bottom;get worm;w;exa filth;search filth;exa bottom;search bottom;get worm;4;exa filth;search filth;exa bottom;search bottom;get worm;w;exa filth;search filth;exa bottom;search bottom;get worm;d;exa filth;search filth;exa bottom;search bottom;get worm;e;exa filth;search filth;exa bottom;search bottom;get worm;d;exa filth;search filth;exa bottom;search bottom;get worm;u;1;exa filth;search filth;exa bottom;search bottom;get worm;w;exa filth;search filth;exa bottom;search bottom;get worm;4;exa filth;search filth;exa bottom;search bottom;get worm;u;w;4;4;u;s5ws2ws2wsw;enter tower;i}
+
+#action {^The balrog died.}{
+	get crystal from corpse;
+	pull wand;
+	get shield from statue;
+	get rod from statue;
+	get gauntlets from statue;
+}{1}
+
+#alias sig {2e2nwn;buy sign;se2s2w}
+#alias pro {2en3w;enter portal 2;w;enter cave;24n}
+#alias prob {24s2e;enter portal;3es2w}
