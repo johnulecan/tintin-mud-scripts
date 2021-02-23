@@ -481,7 +481,7 @@ cbon
     #showme {+--------------------------+-------+-----------------------------+-----------------------------+};
     #echo {| %-25s| %+5s | %+12s (%+12s) | %+12s (%+12s) |}{R.I.P.}{Times}{Experience}{Average}{Gold}{Average};
     #showme {+--------------------------+-------+-----------------------------+-----------------------------+};
-    #foreach {$gains[]} {mob}
+    #foreach {*gains[]} {mob}
     {
         #math {axp}{$gains[$mob][xp]/$gains[$mob][knr]};
         #math {agc}{$gains[$mob][gc]/$gains[$mob][knr]};
