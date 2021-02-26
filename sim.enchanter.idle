@@ -42,7 +42,7 @@
         setchurch;        
 	    myheartbeat;
 	    away $away_message;
-        #spl 7 1;
+        #spl 13 1;
         #delay {4}{$circle}
     }
 }
@@ -109,17 +109,33 @@
 #CLASS {sim.idle.bot.save} CLOSE
 
 #nop BURNED SP STATS
+#var totalspnowward {0};
+#var totalspnowcircle {0};
+
 #action {You make some magical gestures and you draw a red circle.}{
     #math {totalspburned}{$totalspburned + 40};
     #math {totalspnow}{$totalspnow + 40};
     #math {totalsp}{$totalsp + 40};
+    #math {totalspnowcircle}{$totalspnowcircle + 40};
+    #math {totalsp_circle}{$totalsp_circle + 40};
+
+    #format {totalspburned_string}{%M}{$totalspburned};
+    #format {totalspnow_string}{%M}{$totalspnow};
+    #format {totalsp_string}{%M}{$totalsp};
+    #format {totalspnowcircle_string}{%M}{$totalspnowcircle};
+    #format {totalspnowward_string}{%M}{$totalspnowward};
+    #format {totalsp_circle_string}{%M}{$totalsp_circle};
+    #format {totalsp_ward_string}{%M}{$totalsp_ward};
     
     #echo {{          <F0F0>STATS:}{3}};
     #echo {{      }{4}};
-    #echo {{          <FF0F>** 40 SP used with CIRCLE.<088>}{5}};
-    #echo {{          <030>** $totalspnow total SP used this login.<088>}{6}};
-    #echo {{          <030>** $totalsp TOTAL SP used since we started counting.<088>}{7}};
-    #echo {{      }{8}};
+    #echo {{          <FF0F>** $totalspnowcircle_string SP used this login with CIRCLE.<088>}{5}};
+    #echo {{          <FF0F>** $totalspnowward_string SP used this login with WARD.<088>}{6}};
+    #echo {{          <030>** $totalspnow_string total SP used this login.<088>}{7}};
+    #echo {{          <030>** $totalsp_string TOTAL SP used since we started counting.<088>}{8}};
+    #echo {{          <030>** $totalsp_circle_string CIRCLE TOTAL SP used since we started counting.<088>}{9}};
+    #echo {{          <030>** $totalsp_ward_string WARDS TOTAL SP used since we started counting.<088>}{10}};
+    
     
     #class sim.idle.bot.save write sim.idle.bot.save;
 
@@ -129,13 +145,25 @@
     #math {totalspburned}{$totalspburned + 50};
     #math {totalspnow}{$totalspnow + 50};
     #math {totalsp}{$totalsp + 50};
+    #math {totalspnowward}{$totalspnowward + 50};
+    #math {totalsp_ward}{$totalsp_ward + 50};
+
+    #format {totalspburned_string}{%M}{$totalspburned};
+    #format {totalspnow_string}{%M}{$totalspnow};
+    #format {totalsp_string}{%M}{$totalsp};
+    #format {totalspnowcircle_string}{%M}{$totalspnowcircle};
+    #format {totalspnowward_string}{%M}{$totalspnowward};
+    #format {totalsp_circle_string}{%M}{$totalsp_circle};
+    #format {totalsp_ward_string}{%M}{$totalsp_ward};
     
     #echo {{          <F0F0>STATS:}{3}};
-    #echo {{          }{4}};
-    #echo {{          <FF0F>** 50 SP used with WARD.<088>}{5}};
-    #echo {{          <030>** $totalspnow total SP used this login.<088>}{6}};
-    #echo {{          <030>** $totalsp TOTAL SP used since we started counting.<088>}{7}};
-    #echo {{      }{8}};
+    #echo {{      }{4}};
+    #echo {{          <FF0F>** $totalspnowcircle_string SP used this login with CIRCLE.<088>}{5}};
+    #echo {{          <FF0F>** $totalspnowward_string SP used this login with WARD.<088>}{6}};
+    #echo {{          <030>** $totalspnow_string total SP used this login.<088>}{7}};
+    #echo {{          <030>** $totalsp_string TOTAL SP used since we started counting.<088>}{8}};
+    #echo {{          <030>** $totalsp_circle_string CIRCLE TOTAL SP used since we started counting.<088>}{9}};
+    #echo {{          <030>** $totalsp_ward_string WARDS TOTAL SP used since we started counting.<088>}{10}};
     
     #class sim.idle.bot.save write sim.idle.bot.save;
 }{2}
