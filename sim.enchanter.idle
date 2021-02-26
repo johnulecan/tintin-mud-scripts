@@ -42,7 +42,7 @@
         setchurch;        
 	    myheartbeat;
 	    away $away_message;
-        #spl 11 1;
+        #spl 7 1;
         #delay {4}{$circle}
     }
 }
@@ -110,23 +110,33 @@
 
 #nop BURNED SP STATS
 #action {You make some magical gestures and you draw a red circle.}{
-	#math {totalspburned}{$totalspburned + 40};
-	#math {totalspnow}{$totalspnow + 40};
+    #math {totalspburned}{$totalspburned + 40};
+    #math {totalspnow}{$totalspnow + 40};
     #math {totalsp}{$totalsp + 40};
-    #showme {<030>** 40 SP used with CIRCLE.<088>};
-    #showme {<030>** $totalspnow total SP used this login.<088>};
-    #showme {<030>** $totalsp TOTAL SP used since we started counting.<088>};
+    
+    #echo {{          <F0F0>STATS:}{3}};
+    #echo {{      }{4}};
+    #echo {{          <FF0F>** 40 SP used with CIRCLE.<088>}{5}};
+    #echo {{          <030>** $totalspnow total SP used this login.<088>}{6}};
+    #echo {{          <030>** $totalsp TOTAL SP used since we started counting.<088>}{7}};
+    #echo {{      }{8}};
+    
     #class sim.idle.bot.save write sim.idle.bot.save;
 
 }{1}
 
 #action {You then make some magical gestures and the runes are placed on your forehead.}{
-	#math {totalspburned}{$totalsburned + 50};
-	#math {totalspnow}{$totalspnow + 50};
-    #math {totalsp}{$totalsp + 40};
-    #showme {<030>** 50 SP used with WARD.<088>};
-    #showme {<030>** $totalspnow total sp used this login.<088>};
-    #showme {<030>** $totalsp TOTAL sp used since we started counting.<088>};
+    #math {totalspburned}{$totalspburned + 50};
+    #math {totalspnow}{$totalspnow + 50};
+    #math {totalsp}{$totalsp + 50};
+    
+    #echo {{          <F0F0>STATS:}{3}};
+    #echo {{          }{4}};
+    #echo {{          <FF0F>** 50 SP used with WARD.<088>}{5}};
+    #echo {{          <030>** $totalspnow total SP used this login.<088>}{6}};
+    #echo {{          <030>** $totalsp TOTAL SP used since we started counting.<088>}{7}};
+    #echo {{      }{8}};
+    
     #class sim.idle.bot.save write sim.idle.bot.save;
 }{2}
 
