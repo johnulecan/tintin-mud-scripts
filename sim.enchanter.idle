@@ -19,7 +19,7 @@
 #var primary_ward {ain}
 #var secondary_ward {nain}
 #var circle {draw-circle red}
-#format {my_name}{%n}{$myname}
+#format {myname}{%n}{$my_name}
 
 #nop --------- STOP EDITING FROM HERE ----------------------
 
