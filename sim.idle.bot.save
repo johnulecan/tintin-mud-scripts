@@ -1,0 +1,5 @@
+#CLASS {sim.idle.bot.save} OPEN
+
+#VARIABLE {totalsp} {0}
+
+#CLASS {sim.idle.bot.save} CLOSE
