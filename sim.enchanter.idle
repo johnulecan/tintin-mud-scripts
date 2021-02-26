@@ -19,6 +19,7 @@
 #var primary_ward {ain}
 #var secondary_ward {nain}
 #var circle {draw-circle red}
+#format {my_name}{%n}{$myname}
 
 #nop --------- STOP EDITING FROM HERE ----------------------
 
@@ -130,7 +131,7 @@
 }{2}
 
 #var ward_active 0
-#action {Coshianu already has a Ward of that type!}{
+#action {$myname already has a Ward of that type!}{
 	#if {$sp > 100}{
 		#var ward_active 1;
 		#delay {6}{ward $secondary_ward on $my_name};
