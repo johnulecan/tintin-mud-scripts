@@ -1,0 +1,7 @@
+#CLASS {sim.idle.bot.save} OPEN
+
+#VARIABLE {totalsp} {0};
+#VARIABLE {totalsp_circle} {0};
+#VARIABLE {totalsp_ward} {0};
+
+#CLASS {sim.idle.bot.save} CLOSE

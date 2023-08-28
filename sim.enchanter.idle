@@ -1,0 +1,204 @@
+#conf {SPEEDWALK}{on}
+#conf {PACKET PATCH}{9.99}
+#conf color on
+
+#nop --------- BOT SETTINGS ---------------------------------
+#var my_name {user_name}
+#var my_pass {password}
+#var away_message {At office...might be afk for awhile...}
+#NOP --------------------------------------------------------
+#nop ---- SET HOME ROOM AND PATHS
+#var home {The Old Wood}
+#alias {home_from_guild}{w;2n;2d;e;simb}
+#alias {path_to_green}{5s}
+#alias {path_from_green}{5n}
+#alias {sim}{4w4s23w;enter gate;7w;enter gate}
+#alias {simb}{out;7e;enter gate;23e4n4e}
+#nop -------------------------------------------------------
+#nop ---- SET SPELLS
+#var primary_ward {ain}
+#var secondary_ward {nain}
+#var circle {draw-circle red}
+#format {myname}{%n}{$my_name}
+
+#nop --------- STOP EDITING FROM HERE ----------------------
+
+#EVENT {PROGRAM START}{#ses {NannyMUD SimIDLE}{130.236.254.159}{2000}}
+#event {SESSION CONNECTED}{$my_name;$my_pass;yes;#spl}
+
+#PROMPT           {[xp%0][%1]}  {[xp%0][%1]}
+#var prep {[<034>idle<061>SymBOT v1.0<088>] }
+
+#nop 1st login
+#action {------------------------------ GENERAL INFO -------------------------------}
+{
+    #delay {2}
+    {
+        #system echo "----------- Start: `date` ---------- " >> sim.idle.bot.log;
+        #config log plain;
+        #log {a}{sim.idle.bot.log};
+	    wear all;summon staff;
+        #delay {2}{home_from_guild}
+        setchurch;        
+	    myheartbeat;
+	    away $away_message;
+        #spl 13 1;
+        #delay {4}{$circle}
+    }
+}
+
+#var totalspburned 0
+
+#var church 0
+#alias setchurch {#var church 1;#showme $prep  We are home...}
+#alias unsetchurch {#var church 0}
+
+#action {$home}{setchurch}
+#action {%0 <%1>.}{
+	#var current_location %0;
+	#if {$current_location != $home}
+	{
+		unsetchurch;	
+	};
+}
+
+#action {You must have the ebony staff}{summon staff}
+
+#action {** HP: %1/%2   SP: %3/%4}
+{
+    #var hp %1;
+    #var mhp %2;
+    #var sp %3;
+    #var msp %4;
+}
+
+
+#nop
+#nop HEARTBEAT
+#nop
+
+#alias {myheartbeat}
+{
+       
+    #showme $prep <F0B0>[HB]<088>[C:$church][<030>SP:$sp<088>][HBD:$hbdelay]<FB00>[BURNED SP:$totalspnow]<088>;
+
+    #if {$sp > 130}{
+		ward $primary_ward on $my_name;		
+	};
+
+	#if {$no_sp == 1 && $sp > 40}{
+		#var no_sp 0;
+		$circle;
+	};
+	
+	#math {human}{1d100};
+    #if {($church == 1) && ($human < 2)}
+    {       
+        #showme <030>Lets react more human...<088>;
+        #nop <030>Going to green...<088>;
+        #math greendelay {1d60};
+        path_to_green;l;#delay {$greendelay}{score;path_from_green;$circle};
+    };
+
+
+    #delay {$hbdelay}{myheartbeat};
+}
+
+#CLASS {sim.idle.bot.save} OPEN
+#CLASS {sim.idle.bot.save} READ sim.idle.bot.save
+#CLASS {sim.idle.bot.save} CLOSE
+
+#nop BURNED SP STATS
+#var totalspnowward {0};
+#var totalspnowcircle {0};
+
+#action {You make some magical gestures and you draw a red circle.}{
+    #math {totalspburned}{$totalspburned + 40};
+    #math {totalspnow}{$totalspnow + 40};
+    #math {totalsp}{$totalsp + 40};
+    #math {totalspnowcircle}{$totalspnowcircle + 40};
+    #math {totalsp_circle}{$totalsp_circle + 40};
+
+    #format {totalspburned_string}{%M}{$totalspburned};
+    #format {totalspnow_string}{%M}{$totalspnow};
+    #format {totalsp_string}{%M}{$totalsp};
+    #format {totalspnowcircle_string}{%M}{$totalspnowcircle};
+    #format {totalspnowward_string}{%M}{$totalspnowward};
+    #format {totalsp_circle_string}{%M}{$totalsp_circle};
+    #format {totalsp_ward_string}{%M}{$totalsp_ward};
+    
+    #echo {{          <F0F0>STATS:}{3}};
+    #echo {{      }{4}};
+    #echo {{          <FF0F>** $totalspnowcircle_string SP used this login with CIRCLE.<088>}{5}};
+    #echo {{          <FF0F>** $totalspnowward_string SP used this login with WARD.<088>}{6}};
+    #echo {{          <030>** $totalspnow_string total SP used this login.<088>}{7}};
+    #echo {{          <030>** $totalsp_string TOTAL SP used since we started counting.<088>}{8}};
+    #echo {{          <030>** $totalsp_circle_string CIRCLE TOTAL SP used since we started counting.<088>}{9}};
+    #echo {{          <030>** $totalsp_ward_string WARDS TOTAL SP used since we started counting.<088>}{10}};
+    
+    
+    #class sim.idle.bot.save write sim.idle.bot.save;
+
+}{1}
+
+#action {You then make some magical gestures and the runes are placed on your forehead.}{
+    #math {totalspburned}{$totalspburned + 50};
+    #math {totalspnow}{$totalspnow + 50};
+    #math {totalsp}{$totalsp + 50};
+    #math {totalspnowward}{$totalspnowward + 50};
+    #math {totalsp_ward}{$totalsp_ward + 50};
+
+    #format {totalspburned_string}{%M}{$totalspburned};
+    #format {totalspnow_string}{%M}{$totalspnow};
+    #format {totalsp_string}{%M}{$totalsp};
+    #format {totalspnowcircle_string}{%M}{$totalspnowcircle};
+    #format {totalspnowward_string}{%M}{$totalspnowward};
+    #format {totalsp_circle_string}{%M}{$totalsp_circle};
+    #format {totalsp_ward_string}{%M}{$totalsp_ward};
+    
+    #echo {{          <F0F0>STATS:}{3}};
+    #echo {{      }{4}};
+    #echo {{          <FF0F>** $totalspnowcircle_string SP used this login with CIRCLE.<088>}{5}};
+    #echo {{          <FF0F>** $totalspnowward_string SP used this login with WARD.<088>}{6}};
+    #echo {{          <030>** $totalspnow_string total SP used this login.<088>}{7}};
+    #echo {{          <030>** $totalsp_string TOTAL SP used since we started counting.<088>}{8}};
+    #echo {{          <030>** $totalsp_circle_string CIRCLE TOTAL SP used since we started counting.<088>}{9}};
+    #echo {{          <030>** $totalsp_ward_string WARDS TOTAL SP used since we started counting.<088>}{10}};
+    
+    #class sim.idle.bot.save write sim.idle.bot.save;
+}{2}
+
+#var ward_active 0
+#action {$myname already has a Ward of that type!}{
+	#if {$sp > 100}{
+		#var ward_active 1;
+		#delay {6}{ward $secondary_ward on $my_name};
+		#delay {6}{$circle} 
+	};
+}{6}
+
+#action {Your circle breaks.} {
+	#if {$sp > 100}{
+		#delay {6}{ward $primary_ward on $my_name};	
+	};
+	
+	#delay {10}{$circle}
+
+}{1}
+
+#action {You do not have enough spellpoints.} {#var no_sp 1}{1}
+#action {You fumble really bad.} {#delay {10}{$circle}}{2}
+#action {You get dazzled for a moment, and nothing else happens.} {#delay {10}{$circle}}{2}
+#action {You try to concentrate but fail.} {#delay {10}{$circle}}{3}
+#action {Your spell fizzles and dies.} {#delay {10}{$circle}} {2}
+#action {Your mind is too exhausted.}{#delay {10}{$circle}}{2}
+
+
+#delay {2}{myheartbeat}
+#alias hbd #var hbdelay
+hbd 4
+
+#alias {sim}{4w4s23w;enter gate;7w;enter gate}
+#alias {simb}{out;7e;enter gate;23e4n4e}
+
+#gag What?
